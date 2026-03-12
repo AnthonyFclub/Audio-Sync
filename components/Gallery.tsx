@@ -11,13 +11,13 @@ const images = [
         glow: "hover:shadow-[0_0_40px_rgba(255,0,0,0.4)]"
     },
     {
-        src: "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?q=80&w=2070&auto=format&fit=crop",
+        src: "https://images.unsplash.com/photo-1574391884720-bbe3740f59d3?q=80&w=2070&auto=format&fit=crop",
         alt: "EL RITMO EN TUS MANOS",
         size: "small",
         glow: "hover:shadow-[0_0_40px_rgba(0,243,255,0.4)]"
     },
     {
-        src: "https://images.unsplash.com/photo-1514525253440-b393452e8d26?q=80&w=1974&auto=format&fit=crop",
+        src: "https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=1974&auto=format&fit=crop",
         alt: "LUZ QUE HIPNOTIZA",
         size: "small",
         glow: "hover:shadow-[0_0_40px_rgba(188,19,254,0.4)]"
@@ -29,7 +29,7 @@ const images = [
         glow: "hover:shadow-[0_0_40px_rgba(57,255,20,0.4)]"
     },
     {
-        src: "https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=1974&auto=format&fit=crop",
+        src: "/gallery-tower.jpg",
         alt: "EXCLUSIVIDAD NOCTURNA",
         size: "medium",
         glow: "hover:shadow-[0_0_40px_rgba(255,0,85,0.4)]"

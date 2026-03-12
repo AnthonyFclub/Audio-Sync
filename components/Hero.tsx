@@ -31,14 +31,13 @@ const Hero = () => {
                         >
                             AUDIO SYNC
                         </motion.span>
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-rave-red via-accent to-secondary animate-gradient-x text-4xl md:text-6xl lg:text-7xl mt-4 font-psycho">
-                            La Fiesta Comienza Aquí
+                        <span className="block text-white text-6xl md:text-8xl lg:text-9xl mt-8 font-signature luxury-text-glow leading-none lowercase tracking-normal">
+                            ¡tu experiencia comienza aquí!
                         </span>
                     </h1>
 
-                    <p className="mt-8 text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-12 font-light tracking-wide opacity-80 decoration-primary/20">
+                    <p className="mt-6 text-2xl md:text-4xl text-white/90 max-w-3xl mx-auto mb-12 font-signature tracking-wide animate-pulse-slow">
                         Sonido que se siente, iluminación que hipnotiza.
-                        Tu evento transformado en el <span className="text-primary font-bold">rave definitivo</span>.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
