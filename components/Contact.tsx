@@ -1,73 +1,104 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Zap } from "lucide-react";
 
 const Contact = () => {
     return (
-        <section id="contacto" className="py-20 bg-black relative">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contacto" className="py-32 relative overflow-hidden">
+            {/* Decorative Jungle Elements */}
+            <div className="absolute inset-0 pointer-events-none opacity-20">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ rotate: [-5, 5, -5], scale: [1, 1.1, 1] }}
+                    transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-10 -right-10 w-80 h-80 text-rave-red"
+                >
+                    <svg viewBox="0 0 200 200" fill="currentColor">
+                        <path d="M0,200 Q50,50 200,0 L200,200 Z" opacity="0.4" />
+                    </svg>
+                </motion.div>
+                <motion.div
+                    animate={{ rotate: [5, -5, 5], x: [0, 20, 0] }}
+                    transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute bottom-1/2 -left-20 w-96 h-96 text-primary"
+                >
+                    <svg viewBox="0 0 200 200" fill="currentColor">
+                        <path d="M0,200 Q100,0 200,200 Z" />
+                    </svg>
+                </motion.div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    transition={{ duration: 1 }}
+                    className="text-center mb-24"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Contáctanos
+                    <div className="inline-block px-4 py-1 rounded-full glass border-rave-red/20 text-rave-red text-xs font-black tracking-[0.3em] mb-4">
+                        EL SIGUIENTE PASO
+                    </div>
+                    <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+                        ¿LISTO PARA EL <span className="text-rave-red neon-text">NIVEL</span> SUPERIOR?
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
-                        ¿Listo para tu próximo evento? Escríbenos y te enviaremos una cotización personalizada.
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-light">
+                        Hablemos de tu visión. Nuestro equipo está listo para materializar el evento de tus sueños.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
                     {/* Contact Info */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="space-y-8"
+                        transition={{ duration: 1 }}
+                        className="space-y-10"
                     >
-                        <div className="bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-primary/30 transition-colors duration-300">
-                            <h3 className="text-2xl font-bold text-white mb-6">Información de Contacto</h3>
+                        <div className="glass border border-white/5 p-12 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                            <h3 className="text-3xl font-black text-white mb-10 tracking-tighter decoration-primary/50 underline-offset-8 underline">CONEXIÓN DIRECTA</h3>
 
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                                        <Phone className="text-primary" size={24} />
+                            <div className="space-y-10">
+                                <motion.div whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
+                                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 group-hover:bg-primary group-hover:text-black transition-all">
+                                        <Phone size={28} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold mb-1">Teléfono / WhatsApp</h4>
-                                        <p className="text-gray-400">+52 55 1234 5678</p>
-                                        <p className="text-gray-400">Lunes a Viernes: 9am - 6pm</p>
+                                        <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-primary transition-colors">TELÉFONO / WHATSAPP</h4>
+                                        <p className="text-gray-400 text-lg">+52 55 1234 5678</p>
+                                        <p className="text-primary text-xs font-bold mt-1">SOPORTE 24/7 EVENTOS</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
-                                        <Mail className="text-secondary" size={24} />
+                                <motion.div whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
+                                    <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0 border border-secondary/20 group-hover:bg-secondary group-hover:text-black transition-all">
+                                        <Mail size={28} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold mb-1">Email</h4>
-                                        <p className="text-gray-400">contacto@audiosync.com</p>
-                                        <p className="text-gray-400">cotizaciones@audiosync.com</p>
+                                        <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-secondary transition-colors">CORREO ELECTRÓNICO</h4>
+                                        <p className="text-gray-400 text-lg">contacto@audiosync.com</p>
+                                        <p className="text-secondary text-xs font-bold mt-1">COTIZACIONES FLASH</p>
                                     </div>
-                                </div>
+                                </motion.div>
 
-                                <div className="flex items-start gap-4">
-                                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                                        <MapPin className="text-accent" size={24} />
+                                <motion.div whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
+                                    <div className="w-14 h-14 rounded-2xl bg-rave-red/10 flex items-center justify-center shrink-0 border border-rave-red/20 group-hover:bg-rave-red group-hover:text-black transition-all">
+                                        <MapPin size={28} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold mb-1">Ubicación</h4>
-                                        <p className="text-gray-400">Av. Insurgentes Sur 1234,</p>
-                                        <p className="text-gray-400">Col. Del Valle, CDMX, México</p>
+                                        <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-rave-red transition-colors">BASE DE OPERACIONES</h4>
+                                        <p className="text-gray-400 text-lg">Insurgentes Sur, CDMX</p>
+                                        <p className="text-rave-red text-xs font-bold mt-1">MÉXICO</p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </div>
+                        </div>
+
+                        {/* Little Rave Badge */}
+                        <div className="p-8 glass rounded-3xl border-primary/10 flex items-center gap-6 animate-pulse">
+                            <Zap className="text-primary" size={40} />
+                            <p className="text-white font-black tracking-widest text-sm">RESERVACIONES ABIERTAS PARA TEMPORADA DE FESTIVALES 2026</p>
                         </div>
                     </motion.div>
 
@@ -76,69 +107,68 @@ const Contact = () => {
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 1 }}
                     >
-                        <form className="bg-white/5 border border-white/10 p-8 rounded-2xl space-y-6">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label htmlFor="name" className="text-white text-sm font-medium">Nombre</label>
+                        <form className="glass border border-white/5 p-12 rounded-[2.5rem] space-y-8 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                <div className="space-y-3">
+                                    <label htmlFor="name" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">TU NOMBRE</label>
                                     <input
                                         type="text"
                                         id="name"
-                                        className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
-                                        placeholder="Tu nombre"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary focus:bg-primary/5 transition-all outline-none"
+                                        placeholder="Nombre completo"
                                     />
                                 </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="phone" className="text-white text-sm font-medium">Teléfono</label>
+                                <div className="space-y-3">
+                                    <label htmlFor="phone" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">TELÉFONO</label>
                                     <input
                                         type="tel"
                                         id="phone"
-                                        className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
-                                        placeholder="Tu teléfono"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary focus:bg-primary/5 transition-all outline-none"
+                                        placeholder="+52 ..."
                                     />
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="email" className="text-white text-sm font-medium">Email</label>
+                            <div className="space-y-3">
+                                <label htmlFor="email" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">EMAIL</label>
                                 <input
                                     type="email"
                                     id="email"
-                                    className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
-                                    placeholder="tu@email.com"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary focus:bg-primary/5 transition-all outline-none"
+                                    placeholder="hola@ejemplo.com"
                                 />
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="service" className="text-white text-sm font-medium">Servicio de interés</label>
+                            <div className="space-y-3">
+                                <label htmlFor="service" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">SERVICIO</label>
                                 <select
                                     id="service"
-                                    className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary focus:bg-primary/5 transition-all outline-none appearance-none cursor-pointer"
                                 >
-                                    <option value="">Selecciona una opción</option>
-                                    <option value="audio">Renta de Audio</option>
-                                    <option value="iluminacion">Iluminación</option>
-                                    <option value="dj">DJ y Música</option>
-                                    <option value="paquete">Paquete Completo</option>
+                                    <option value="" className="bg-black">Selecciona la potencia</option>
+                                    <option value="audio" className="bg-black">RENTAL DE AUDIO</option>
+                                    <option value="iluminacion" className="bg-black">SHOW DE LUCES</option>
+                                    <option value="paquete" className="bg-black">RAVE COMPLETO</option>
                                 </select>
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="message" className="text-white text-sm font-medium">Mensaje</label>
+                            <div className="space-y-3">
+                                <label htmlFor="message" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">TU VISIÓN</label>
                                 <textarea
                                     id="message"
                                     rows={4}
-                                    className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors"
-                                    placeholder="Cuéntanos sobre tu evento..."
+                                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary focus:bg-primary/5 transition-all outline-none"
+                                    placeholder="Cuéntanos los detalles de la fiesta..."
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-primary to-secondary text-black font-bold py-4 rounded-lg shadow-[0_0_20px_rgba(0,243,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.5)] transition-all duration-300 flex items-center justify-center gap-2"
+                                className="group w-full bg-primary text-black font-black py-5 rounded-2xl shadow-[0_0_30px_rgba(0,243,255,0.4)] hover:shadow-[0_0_50px_rgba(0,243,255,0.8)] transition-all duration-500 flex items-center justify-center gap-3 animate-breathe hover:scale-[1.02] active:scale-[0.98]"
                             >
-                                Enviar Mensaje <Send size={20} />
+                                AGENDAR AHORA <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </button>
                         </form>
                     </motion.div>
