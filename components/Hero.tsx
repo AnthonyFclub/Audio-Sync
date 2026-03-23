@@ -30,11 +30,22 @@ const Hero = () => {
                     <motion.div
                         animate={{ y: [0, -8, 0] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="mt-6"
+                        className="mt-14 md:mt-16"
                     >
-                        <span className="block text-5xl md:text-7xl lg:text-8xl font-luxury italic leading-none tracking-tight bg-gradient-to-r from-white via-primary/30 to-white text-transparent bg-clip-text drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] font-light">
-                            Tu experiencia comienza aquí!
-                        </span>
+                        <motion.span
+                            animate={{
+                                textShadow: [
+                                    "0px 0px 10px rgba(255,255,255,0.2)",
+                                    "0px 0px 30px rgba(255,255,255,0.9)",
+                                    "0px 0px 10px rgba(255,255,255,0.2)"
+                                ],
+                                opacity: [0.85, 1, 0.85]
+                            }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            className="block py-2 text-4xl md:text-6xl lg:text-7xl font-luxury italic leading-normal tracking-tight text-white font-light"
+                        >
+                            Tu experiencia comienza aquí
+                        </motion.span>
                     </motion.div>
 
 
