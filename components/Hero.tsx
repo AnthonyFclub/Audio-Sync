@@ -14,16 +14,9 @@ const Hero = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <motion.div
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/30 text-primary text-sm font-medium mb-8 neon-text"
-                    >
-                        <Zap size={16} className="animate-pulse" />
-                        EXPERIENCIA RAVE PROFESIONAL
-                    </motion.div>
 
-                    <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-white mb-8 tracking-tighter leading-none">
+
+                    <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
                         <motion.span
                             animate={{ color: ["#ffffff", "#00f3ff", "#ffffff", "#bc13fe", "#ffffff"] }}
                             transition={{ duration: 10, repeat: Infinity }}
@@ -31,34 +24,25 @@ const Hero = () => {
                         >
                             AUDIO SYNC
                         </motion.span>
-                        <span className="block text-white text-6xl md:text-8xl lg:text-9xl mt-8 font-signature luxury-text-glow leading-none lowercase tracking-normal">
-                            ¡tu experiencia comienza aquí!
-                        </span>
                     </h1>
 
-                    <p className="mt-6 text-2xl md:text-4xl text-white/90 max-w-3xl mx-auto mb-12 font-signature tracking-wide animate-pulse-slow">
-                        Sonido que se siente, iluminación que hipnotiza.
-                    </p>
+                    <motion.div
+                        animate={{ y: [0, -8, 0] }}
+                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                        className="mt-6 mb-16"
+                    >
+                        <span className="block text-6xl md:text-8xl lg:text-9xl font-signature leading-none tracking-normal bg-gradient-to-r from-white via-primary/50 to-white text-transparent bg-clip-text drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                            Tu experiencia comienza aquí!
+                        </span>
+                    </motion.div>
 
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <Link
-                            href="#contacto"
-                            className="group relative px-10 py-5 bg-primary text-black font-black rounded-full overflow-hidden shadow-[0_0_30px_rgba(0,243,255,0.5)] hover:shadow-[0_0_50px_rgba(0,243,255,0.8)] transition-all duration-500 hover:scale-110 active:scale-95 animate-breathe"
-                        >
-                            <span className="relative z-10 flex items-center gap-3">
-                                COTIZAR AHORA <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform duration-300" />
-                            </span>
-                            <div className="absolute inset-0 bg-white/30 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                        </Link>
-
-                        <Link
-                            href="#servicios"
-                            className="group px-10 py-5 glass text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 border-white/20 flex items-center gap-2 hover:border-secondary/50 shadow-inner"
-                        >
-                            <Sparkles size={20} className="group-hover:rotate-12 transition-transform text-secondary" />
-                            VER SERVICIOS
-                        </Link>
+                    <div className="flex items-center justify-center w-full gap-4 sm:gap-6 mt-12 mb-8 opacity-90">
+                        <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-black tracking-[0.15em] sm:tracking-[0.3em] text-white uppercase drop-shadow-[0_0_15px_rgba(0,243,255,0.6)] text-center">
+                            Sonido que se siente <span className="text-secondary neon-text mx-2 sm:mx-4 text-[10px] md:text-sm align-middle">♦</span> Iluminación que hipnotiza
+                        </p>
                     </div>
+
+
                 </motion.div>
             </div>
 
