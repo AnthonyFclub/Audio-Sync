@@ -8,18 +8,7 @@ import Image from "next/image";
 const Footer = () => {
     return (
         <footer className="relative pt-24 pb-12 overflow-hidden">
-            {/* Decorative Jungle Elements */}
-            <div className="absolute inset-0 pointer-events-none opacity-10">
-                <motion.div
-                    animate={{ rotate: [-20, 20, -20] }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                    className="absolute -bottom-20 -left-20 w-[600px] h-[600px] text-green-950"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor">
-                        <path d="M0,200 Q100,50 200,0 L200,200 Z" />
-                    </svg>
-                </motion.div>
-            </div>
+
             {/* Background elements for footer */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent" />

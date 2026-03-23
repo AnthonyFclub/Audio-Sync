@@ -6,27 +6,7 @@ import { Mail, Phone, MapPin, Send, Zap } from "lucide-react";
 const Contact = () => {
     return (
         <section id="contacto" className="py-32 relative overflow-hidden">
-            {/* Decorative Jungle Elements */}
-            <div className="absolute inset-0 pointer-events-none opacity-20">
-                <motion.div
-                    animate={{ rotate: [-5, 5, -5], scale: [1, 1.1, 1] }}
-                    transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-10 -right-10 w-80 h-80 text-rave-red"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor">
-                        <path d="M0,200 Q50,50 200,0 L200,200 Z" opacity="0.4" />
-                    </svg>
-                </motion.div>
-                <motion.div
-                    animate={{ rotate: [5, -5, 5], x: [0, 20, 0] }}
-                    transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute bottom-1/2 -left-20 w-96 h-96 text-primary"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor">
-                        <path d="M0,200 Q100,0 200,200 Z" />
-                    </svg>
-                </motion.div>
-            </div>
+
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div

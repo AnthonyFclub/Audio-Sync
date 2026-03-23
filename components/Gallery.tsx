@@ -10,12 +10,7 @@ const images = [
         size: "large",
         glow: "hover:shadow-[0_0_40px_rgba(255,0,0,0.4)]"
     },
-    {
-        src: "https://images.unsplash.com/photo-1574391884720-bbe3740f59d3?q=80&w=2070&auto=format&fit=crop",
-        alt: "EL RITMO EN TUS MANOS",
-        size: "small",
-        glow: "hover:shadow-[0_0_40px_rgba(0,243,255,0.4)]"
-    },
+
     {
         src: "https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=1974&auto=format&fit=crop",
         alt: "LUZ QUE HIPNOTIZA",
@@ -45,27 +40,7 @@ const images = [
 const Gallery = () => {
     return (
         <section id="galeria" className="py-24 relative overflow-hidden">
-            {/* Decorative Jungle Elements */}
-            <div className="absolute inset-0 pointer-events-none opacity-10">
-                <motion.div
-                    animate={{ rotate: [-8, 8, -8] }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-1/2 -right-20 w-96 h-96 text-accent"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor">
-                        <path d="M0,200 C50,150 150,50 200,0 C150,50 50,150 0,200" />
-                    </svg>
-                </motion.div>
-                <motion.div
-                    animate={{ rotate: [5, -5, 5] }}
-                    transition={{ duration: 12, repeat: Infinity, ease: "linear", delay: 2 }}
-                    className="absolute bottom-0 -left-10 w-72 h-72 text-primary"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor" className="scale-y-[-1]">
-                        <path d="M0,200 Q50,50 200,0 Q170,100 0,200" />
-                    </svg>
-                </motion.div>
-            </div>
+
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div

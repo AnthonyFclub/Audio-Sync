@@ -16,18 +16,7 @@ const features = [
 const About = () => {
     return (
         <section id="nosotros" className="py-32 relative overflow-hidden">
-            {/* Decorative Jungle Elements */}
-            <div className="absolute inset-0 pointer-events-none opacity-10">
-                <motion.div
-                    animate={{ rotate: [-10, 10, -10], y: [0, 20, 0] }}
-                    transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-1/2 left-0 w-[500px] h-[500px] text-primary"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor">
-                        <path d="M0,200 Q100,0 200,200 Z" />
-                    </svg>
-                </motion.div>
-            </div>
+
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <motion.div

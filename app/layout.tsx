@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bodoniModa.variable} ${greatVibes.variable} antialiased bg-background text-foreground relative`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bodoniModa.variable} ${greatVibes.variable} antialiased bg-background text-foreground relative not-italic`}
       >
         <PsychedelicBackground />
         <Navbar />

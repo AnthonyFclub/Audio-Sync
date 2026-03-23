@@ -51,27 +51,7 @@ const services = [
 const Services = () => {
     return (
         <section id="servicios" className="py-24 relative overflow-hidden">
-            {/* Decorative Jungle Elements */}
-            <div className="absolute inset-0 pointer-events-none opacity-20">
-                <motion.div
-                    animate={{ rotate: [-5, 5, -5], x: [0, 10, 0] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-10 -left-10 w-64 h-64 text-primary"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor">
-                        <path d="M0,200 Q50,50 200,0 Q170,100 0,200" />
-                    </svg>
-                </motion.div>
-                <motion.div
-                    animate={{ rotate: [5, -5, 5], x: [0, -10, 0] }}
-                    transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute -bottom-20 -right-10 w-80 h-80 text-secondary"
-                >
-                    <svg viewBox="0 0 200 200" fill="currentColor" className="scale-x-[-1]">
-                        <path d="M0,200 Q70,40 200,0 Q160,110 0,200" />
-                    </svg>
-                </motion.div>
-            </div>
+
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
