@@ -42,7 +42,7 @@ const Navbar = () => {
                                 className="w-full h-full object-contain"
                             />
                         </div>
-                        <span className="text-2xl font-black tracking-tighter text-white group-hover:text-primary transition-colors">
+                        <span className="text-2xl font-black tracking-tighter animate-silver-shine drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
                             AUDIO SYNC
                         </span>
                     </Link>
@@ -53,7 +53,7 @@ const Navbar = () => {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-bold text-gray-300 hover:text-primary transition-all duration-300 tracking-widest relative group"
+                                className="text-sm font-bold tracking-widest relative group animate-silver-shine drop-shadow-[0_0_5px_rgba(255,255,255,0.1)]"
                             >
                                 {link.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#00f3ff]" />
@@ -65,9 +65,11 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center gap-4">
                         <Link
                             href="#contacto"
-                            className="px-6 py-2 bg-primary text-black font-bold rounded-full text-sm hover:scale-105 transition-transform shadow-[0_0_15px_#00f3ff] animate-breathe"
+                            className="px-6 py-2 border border-white/20 bg-white/5 rounded-full hover:bg-white/10 hover:border-white/40 hover:scale-105 transition-all duration-300 flex items-center justify-center shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm group"
                         >
-                            Cotizar
+                            <span className="text-sm font-bold tracking-widest animate-silver-shine drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]">
+                                COTIZAR
+                            </span>
                         </Link>
                     </div>
 
@@ -109,7 +111,7 @@ const Navbar = () => {
                                     <Link
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-4xl font-black text-white hover:text-primary transition-colors tracking-tighter neon-text"
+                                        className="text-4xl font-black animate-silver-shine tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
                                     >
                                         {link.name}
                                     </Link>
