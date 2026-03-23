@@ -50,13 +50,13 @@ const Footer = () => {
                         </p>
                         <div className="flex justify-center md:justify-start space-x-6">
                             <Link href="#" className="p-4 glass rounded-full text-gray-400 hover:text-primary hover:shadow-[0_0_20px_#00f3ff] transition-all">
-                                <Instagram size={28} />
+                                <Instagram size={28} strokeWidth={1.5} />
                             </Link>
                             <Link href="#" className="p-4 glass rounded-full text-gray-400 hover:text-secondary hover:shadow-[0_0_20px_#bc13fe] transition-all">
-                                <Facebook size={28} />
+                                <Facebook size={28} strokeWidth={1.5} />
                             </Link>
                             <Link href="#" className="p-4 glass rounded-full text-gray-400 hover:text-rave-red hover:shadow-[0_0_20px_#ff0000] transition-all">
-                                <Zap size={28} />
+                                <Zap size={28} strokeWidth={1.5} />
                             </Link>
                         </div>
                     </motion.div>
@@ -80,15 +80,15 @@ const Footer = () => {
                         <h3 className="text-white font-black text-sm tracking-[0.3em] mb-8 uppercase">CONTACTO</h3>
                         <ul className="space-y-8">
                             <li className="flex items-start justify-center md:justify-start gap-4 text-gray-400 group">
-                                <MapPin className="text-primary shrink-0 group-hover:scale-110 transition-transform" size={24} />
+                                <MapPin className="text-primary shrink-0 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
                                 <span className="text-sm font-bold tracking-wider">CDMX, MÉXICO</span>
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-4 text-gray-400 group">
-                                <Phone className="text-secondary shrink-0 group-hover:scale-110 transition-transform" size={24} />
+                                <Phone className="text-secondary shrink-0 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
                                 <span className="text-sm font-bold tracking-wider">+52 55 1234 5678</span>
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-4 text-gray-400 group">
-                                <Mail className="text-accent shrink-0 group-hover:scale-110 transition-transform" size={24} />
+                                <Mail className="text-accent shrink-0 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
                                 <span className="text-sm font-bold tracking-wider text-xs">CONTACTO@AUDIOSYNC.COM</span>
                             </li>
                         </ul>

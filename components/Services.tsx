@@ -5,46 +5,52 @@ import { Speaker, Lightbulb, Music, Mic2, Truck, Calendar, Zap } from "lucide-re
 
 const services = [
     {
-        icon: <Speaker size={32} />,
+        icon: <Speaker size={32} strokeWidth={1.5} />,
         title: "RENTA DE AUDIO",
         description: "Sistemas de sonido de alta fidelidad que golpean el pecho. Para cualquier tamaño de audiencia con marcas líderes.",
         color: "from-primary to-blue-600",
-        shadow: "shadow-[0_0_20px_rgba(0,243,255,0.3)]"
+        shadow: "shadow-[0_0_20px_rgba(0,243,255,0.3)]",
+        iconColor: "#00f3ff"
     },
     {
-        icon: <Lightbulb size={32} />,
+        icon: <Lightbulb size={32} strokeWidth={1.5} />,
         title: "ILUMINACIÓN PRO",
         description: "Cabezas móviles, par LED y efectos especiales láser para crear atmósferas hipnóticas.",
         color: "from-secondary to-purple-600",
-        shadow: "shadow-[0_0_20px_rgba(188,19,254,0.3)]"
+        shadow: "shadow-[0_0_20px_rgba(188,19,254,0.3)]",
+        iconColor: "#bc13fe"
     },
     {
-        icon: <Music size={32} />,
+        icon: <Music size={32} strokeWidth={1.5} />,
         title: "EQUIPOS PARA DJ",
         description: "Consolas Pioneer y controladores de última generación para el desempeño profesional absoluto.",
         color: "from-rave-red to-accent",
-        shadow: "shadow-[0_0_20px_rgba(255,0,0,0.3)]"
+        shadow: "shadow-[0_0_20px_rgba(255,0,0,0.3)]",
+        iconColor: "#ff0080"
     },
     {
-        icon: <Mic2 size={32} />,
+        icon: <Mic2 size={32} strokeWidth={1.5} />,
         title: "MICROFONÍA",
         description: "Micrófonos inalámbricos de cristalina claridad y todo el soporte técnico que necesitas.",
         color: "from-neon-green to-emerald-600",
-        shadow: "shadow-[0_0_20px_rgba(57,255,20,0.3)]"
+        shadow: "shadow-[0_0_20px_rgba(57,255,20,0.3)]",
+        iconColor: "#39ff14"
     },
     {
-        icon: <Truck size={32} />,
+        icon: <Truck size={32} strokeWidth={1.5} />,
         title: "MONTAJE EXPERTO",
         description: "Ingenieros especializados encargados de la instalación y operación impecable de tu evento.",
         color: "from-accent to-orange-600",
-        shadow: "shadow-[0_0_20px_rgba(255,0,85,0.3)]"
+        shadow: "shadow-[0_0_20px_rgba(255,0,85,0.3)]",
+        iconColor: "#ff5500"
     },
     {
-        icon: <Calendar size={32} />,
+        icon: <Calendar size={32} strokeWidth={1.5} />,
         title: "EVENTOS TOTALES",
         description: "Desde festivales masivos hasta eventos corporativos exclusivos. El rave no tiene límites.",
         color: "from-blue-600 to-indigo-600",
-        shadow: "shadow-[0_0_20px_rgba(37,99,235,0.3)]"
+        shadow: "shadow-[0_0_20px_rgba(37,99,235,0.3)]",
+        iconColor: "#4f46e5"
     }
 ];
 
@@ -104,9 +110,12 @@ const Services = () => {
                                 initial={{ rotate: -10, opacity: 0 }}
                                 whileInView={{ rotate: 0, opacity: 1 }}
                                 transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-                                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-8 text-black shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}
+                                className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 relative"
                             >
-                                {service.icon}
+                                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl" style={{ backgroundColor: service.iconColor }} />
+                                <div style={{ color: service.iconColor }} className="drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                    {service.icon}
+                                </div>
                             </motion.div>
 
                             <h3 className="text-2xl font-black text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
@@ -118,7 +127,7 @@ const Services = () => {
                             </p>
 
                             <div className="mt-8 flex items-center gap-2 text-xs font-bold text-gray-500 group-hover:text-primary transition-colors cursor-pointer">
-                                MÁS INFO <Zap size={12} />
+                                MÁS INFO <Zap size={12} strokeWidth={2} />
                             </div>
                         </motion.div>
                     ))}

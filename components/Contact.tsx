@@ -52,7 +52,7 @@ const Contact = () => {
                             <div className="space-y-10">
                                 <motion.div variants={{ hidden: { opacity: 0, x: -20 }, show: { opacity: 1, x: 0 } }} whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
                                     <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 group-hover:bg-primary group-hover:text-black transition-all">
-                                        <Phone size={28} />
+                                        <Phone size={28} strokeWidth={1.5} />
                                     </div>
                                     <div>
                                         <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-primary transition-colors">TELÉFONO / WHATSAPP</h4>
@@ -63,7 +63,7 @@ const Contact = () => {
 
                                 <motion.div variants={{ hidden: { opacity: 0, x: -20 }, show: { opacity: 1, x: 0 } }} whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
                                     <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0 border border-secondary/20 group-hover:bg-secondary group-hover:text-black transition-all">
-                                        <Mail size={28} />
+                                        <Mail size={28} strokeWidth={1.5} />
                                     </div>
                                     <div>
                                         <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-secondary transition-colors">CORREO ELECTRÓNICO</h4>
@@ -74,7 +74,7 @@ const Contact = () => {
 
                                 <motion.div variants={{ hidden: { opacity: 0, x: -20 }, show: { opacity: 1, x: 0 } }} whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
                                     <div className="w-14 h-14 rounded-2xl bg-rave-red/10 flex items-center justify-center shrink-0 border border-rave-red/20 group-hover:bg-rave-red group-hover:text-black transition-all">
-                                        <MapPin size={28} />
+                                        <MapPin size={28} strokeWidth={1.5} />
                                     </div>
                                     <div>
                                         <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-rave-red transition-colors">BASE DE OPERACIONES</h4>
@@ -87,7 +87,7 @@ const Contact = () => {
 
                         {/* Little Rave Badge */}
                         <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, show: { opacity: 1, scale: 1 } }} className="p-8 glass rounded-3xl border-primary/10 flex items-center gap-6 animate-pulse">
-                            <Zap className="text-primary" size={40} />
+                            <Zap className="text-primary" size={40} strokeWidth={1.5} />
                             <p className="text-white font-black tracking-widest text-sm">RESERVACIONES ABIERTAS PARA TEMPORADA DE FESTIVALES 2026</p>
                         </motion.div>
                     </motion.div>
@@ -169,7 +169,7 @@ const Contact = () => {
                                 type="submit"
                                 className="group w-full bg-primary text-black font-black py-5 rounded-2xl shadow-[0_0_30px_rgba(0,243,255,0.4)] hover:shadow-[0_0_50px_rgba(0,243,255,0.8)] transition-all duration-500 flex items-center justify-center gap-3 animate-breathe hover:scale-[1.02] active:scale-[0.98]"
                             >
-                                AGENDAR AHORA <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                AGENDAR AHORA <Send size={20} strokeWidth={2} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </motion.button>
                         </form>
                     </motion.div>

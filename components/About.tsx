@@ -5,12 +5,12 @@ import { Zap, ShieldCheck, Target, Clock, MessageSquare, Globe } from "lucide-re
 import Image from "next/image";
 
 const features = [
-    { icon: <Clock size={20} />, text: "10+ AÑOS DE EXPERIENCIA" },
-    { icon: <Zap size={20} />, text: "EQUIPOS TOP (JBL, BOSE, SHURE)" },
-    { icon: <ShieldCheck size={20} />, text: "PERSONAL TÉCNICO ÉLITE" },
-    { icon: <Target size={20} />, text: "PUNTUALIDAD MILIMÉTRICA" },
-    { icon: <MessageSquare size={20} />, text: "SERVICIO 100% PERSONALIZADO" },
-    { icon: <Globe size={20} />, text: "COBERTURA TOTAL CDMX Y AM" }
+    { icon: <Clock size={20} strokeWidth={1.5} />, text: "10+ AÑOS DE EXPERIENCIA" },
+    { icon: <Zap size={20} strokeWidth={1.5} />, text: "EQUIPOS TOP (JBL, BOSE, SHURE)" },
+    { icon: <ShieldCheck size={20} strokeWidth={1.5} />, text: "PERSONAL TÉCNICO ÉLITE" },
+    { icon: <Target size={20} strokeWidth={1.5} />, text: "PUNTUALIDAD MILIMÉTRICA" },
+    { icon: <MessageSquare size={20} strokeWidth={1.5} />, text: "SERVICIO 100% PERSONALIZADO" },
+    { icon: <Globe size={20} strokeWidth={1.5} />, text: "COBERTURA TOTAL CDMX Y AM" }
 ];
 
 const About = () => {
