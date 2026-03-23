@@ -5,7 +5,7 @@ import { Zap, ShieldCheck, Target, Clock, MessageSquare, Globe } from "lucide-re
 import Image from "next/image";
 
 const features = [
-    { icon: <Clock size={20} strokeWidth={1.5} />, text: "10+ AÑOS DE EXPERIENCIA" },
+    { icon: <Clock size={20} strokeWidth={1.5} />, text: "3+ AÑOS DE EXPERIENCIA" },
     { icon: <Zap size={20} strokeWidth={1.5} />, text: "EQUIPOS TOP (JBL, BOSE, SHURE)" },
     { icon: <ShieldCheck size={20} strokeWidth={1.5} />, text: "PERSONAL TÉCNICO ÉLITE" },
     { icon: <Target size={20} strokeWidth={1.5} />, text: "PUNTUALIDAD MILIMÉTRICA" },
@@ -95,12 +95,12 @@ const About = () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
-                            <div className="absolute bottom-0 left-0 p-12 w-full">
-                                <div className="glass p-8 rounded-3xl border-white/10">
-                                    <div className="flex items-center gap-6">
-                                        <div className="text-7xl font-black text-white neon-text">10+</div>
-                                        <div className="text-gray-300 font-black tracking-widest text-sm">
-                                            AÑOS REDEFINIENDO<br />EL CONCEPTO DE<br /><span className="text-primary">FIESTA</span>
+                            <div className="absolute bottom-0 left-0 p-6 md:p-12 w-full">
+                                <div className="glass p-6 md:p-8 rounded-3xl border-white/10">
+                                    <div className="flex items-center gap-4 md:gap-6">
+                                        <div className="text-5xl md:text-7xl font-black text-white neon-text shrink-0">3+</div>
+                                        <div className="text-gray-300 font-black tracking-[0.2em] md:tracking-widest text-[10px] md:text-sm">
+                                            AÑOS REDEFINIENDO<br className="hidden md:block" /> EL CONCEPTO DE<br className="hidden md:block" /> <span className="text-primary font-luxury italic">FIESTA</span>
                                         </div>
                                     </div>
                                 </div>
