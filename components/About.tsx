@@ -31,10 +31,10 @@ const About = () => {
                         <h2 className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tighter">
                             DOMINAMOS EL <span className="text-secondary neon-text">SONIDO</span>
                         </h2>
-                        <p className="text-gray-300 text-xl mb-6 leading-relaxed font-light">
-                            En <span className="text-primary font-bold">Audio Sync</span>, no solo conectamos cables; diseñamos experiencias que hacen vibrar el alma. Somos arquitectos de atmósferas nocturnas.
+                        <p className="text-white text-2xl md:text-3xl font-luxury italic mb-8 leading-relaxed tracking-wide drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                            En <span className="text-primary font-black not-italic">Audio Sync</span>, no solo conectamos cables; diseñamos experiencias que hacen vibrar el alma. Somos arquitectos de atmósferas nocturnas.
                         </p>
-                        <p className="text-gray-400 text-lg mb-12 leading-relaxed font-light italic border-l-2 border-primary pl-6">
+                        <p className="text-gray-300 text-xl mb-12 leading-relaxed font-luxury italic tracking-widest border-l-4 border-primary pl-8 py-2 bg-white/5 rounded-r-2xl drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
                             "Nuestra misión es que cada beat se sienta, cada luz cuente una historia y cada evento sea una leyenda."
                         </p>
 

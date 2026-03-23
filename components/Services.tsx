@@ -67,7 +67,7 @@ const Services = () => {
                     <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">
                         EXPERIENCIAS <span className="text-primary neon-text">SENSORIALES</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-light">
+                    <p className="text-white max-w-2xl mx-auto text-2xl md:text-3xl font-luxury italic tracking-wide leading-relaxed drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
                         No solo rentamos equipos, creamos la atmósfera donde los recuerdos se vuelven eternos.
                     </p>
                 </motion.div>

@@ -22,7 +22,7 @@ const Contact = () => {
                     <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">
                         ¿LISTO PARA EL <span className="text-rave-red neon-text">NIVEL</span> SUPERIOR?
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-light">
+                    <p className="text-white max-w-2xl mx-auto text-2xl md:text-3xl font-luxury italic tracking-wide leading-relaxed drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
                         Hablemos de tu visión. Nuestro equipo está listo para materializar el evento de tus sueños.
                     </p>
                 </motion.div>
