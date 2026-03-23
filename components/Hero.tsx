@@ -13,10 +13,11 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
+                    className="-mt-12 md:-mt-24"
                 >
 
 
-                    <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                    <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)] mb-6 md:mb-10">
                         <motion.span
                             animate={{ color: ["#ffffff", "#00f3ff", "#ffffff", "#bc13fe", "#ffffff"] }}
                             transition={{ duration: 10, repeat: Infinity }}
@@ -29,18 +30,12 @@ const Hero = () => {
                     <motion.div
                         animate={{ y: [0, -8, 0] }}
                         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="mt-6 mb-16"
+                        className="mt-6"
                     >
-                        <span className="block text-6xl md:text-8xl lg:text-9xl font-signature leading-none tracking-normal bg-gradient-to-r from-white via-primary/50 to-white text-transparent bg-clip-text drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                        <span className="block text-5xl md:text-7xl lg:text-8xl font-luxury italic leading-none tracking-tight bg-gradient-to-r from-white via-primary/30 to-white text-transparent bg-clip-text drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] font-light">
                             Tu experiencia comienza aquí!
                         </span>
                     </motion.div>
-
-                    <div className="flex items-center justify-center w-full gap-4 sm:gap-6 mt-12 mb-8 opacity-90">
-                        <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-black tracking-[0.15em] sm:tracking-[0.3em] text-white uppercase drop-shadow-[0_0_15px_rgba(0,243,255,0.6)] text-center">
-                            Sonido que se siente <span className="text-secondary neon-text mx-2 sm:mx-4 text-[10px] md:text-sm align-middle">♦</span> Iluminación que hipnotiza
-                        </p>
-                    </div>
 
 
                 </motion.div>
@@ -78,6 +73,20 @@ const Hero = () => {
                     />
                 </div>
             </div>
+
+            {/* Bottom Subtitle */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="absolute bottom-40 md:bottom-48 left-0 w-full flex items-center justify-center px-4 z-10"
+            >
+                <div className="opacity-90">
+                    <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-black tracking-[0.15em] sm:tracking-[0.3em] text-white uppercase drop-shadow-[0_0_15px_rgba(0,243,255,0.6)] text-center">
+                        Sonido que se siente <span className="text-secondary neon-text mx-2 sm:mx-4 text-[10px] md:text-sm align-middle">♦</span> Iluminación que hipnotiza
+                    </p>
+                </div>
+            </motion.div>
 
             {/* Scroll Indicator */}
             <motion.div
