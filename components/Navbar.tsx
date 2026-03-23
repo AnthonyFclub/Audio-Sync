@@ -39,21 +39,25 @@ const Navbar = () => {
                             <img
                                 src="/logo-official.png"
                                 alt="Audio Sync Logo"
-                                className="w-full h-full object-contain"
+                                className="w-full h-full object-contain animate-heartbeat"
                             />
                         </div>
-                        <span className="text-2xl font-black tracking-tighter animate-silver-shine drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
+                        <span
+                            className="text-2xl font-black tracking-tighter animate-silver-shine drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+                            style={{ animationDelay: '1.8s' }}
+                        >
                             AUDIO SYNC
                         </span>
                     </Link>
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
-                        {navLinks.map((link) => (
+                        {navLinks.map((link, index) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
                                 className="text-sm font-bold tracking-widest relative group animate-silver-shine drop-shadow-[0_0_5px_rgba(255,255,255,0.1)]"
+                                style={{ animationDelay: `${(navLinks.length - index) * 0.3}s` }}
                             >
                                 {link.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#00f3ff]" />
@@ -67,7 +71,10 @@ const Navbar = () => {
                             href="#contacto"
                             className="px-6 py-2 border border-white/20 bg-white/5 rounded-full hover:bg-white/10 hover:border-white/40 hover:scale-105 transition-all duration-300 flex items-center justify-center shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm group"
                         >
-                            <span className="text-sm font-bold tracking-widest animate-silver-shine drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]">
+                            <span
+                                className="text-sm font-bold tracking-widest animate-silver-shine drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]"
+                                style={{ animationDelay: '0s' }}
+                            >
                                 COTIZAR
                             </span>
                         </Link>
@@ -112,6 +119,7 @@ const Navbar = () => {
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
                                         className="text-4xl font-black animate-silver-shine tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                                        style={{ animationDelay: `${(navLinks.length - i) * 0.3}s` }}
                                     >
                                         {link.name}
                                     </Link>
