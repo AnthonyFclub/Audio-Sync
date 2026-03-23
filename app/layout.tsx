@@ -50,6 +50,10 @@ export const metadata: Metadata = {
     description: "Transformamos cualquier espacio en el epicentro de la fiesta.",
     images: ["/logo-og.png"],
   },
+  icons: {
+    icon: "/logo-og.png",
+    apple: "/logo-og.png",
+  },
 };
 
 export default function RootLayout({
