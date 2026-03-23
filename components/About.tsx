@@ -20,28 +20,53 @@ const About = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
+                        variants={{
+                            hidden: { opacity: 0, x: -50 },
+                            show: {
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                    staggerChildren: 0.15,
+                                    duration: 0.8
+                                }
+                            }
+                        }}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, margin: "-100px" }}
                     >
-                        <div className="inline-block px-4 py-1 rounded-full glass border-secondary/20 text-secondary text-xs font-black tracking-[0.3em] mb-6">
+                        <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }} className="inline-block px-4 py-1 rounded-full glass border-secondary/20 text-secondary text-xs font-black tracking-[0.3em] mb-6">
                             QUIÉNES SOMOS
-                        </div>
-                        <h2 className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tighter">
+                        </motion.div>
+                        <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }} className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tighter">
                             DOMINAMOS EL <span className="text-secondary neon-text">SONIDO</span>
-                        </h2>
-                        <p className="text-white text-2xl md:text-3xl font-luxury italic mb-8 leading-relaxed tracking-wide drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                        </motion.h2>
+                        <motion.p variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }} className="text-white text-2xl md:text-3xl font-luxury italic mb-8 leading-relaxed tracking-wide drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
                             En <span className="text-primary font-black not-italic">Audio Sync</span>, no solo conectamos cables; diseñamos experiencias que hacen vibrar el alma. Somos arquitectos de atmósferas nocturnas.
-                        </p>
-                        <p className="text-gray-300 text-xl mb-12 leading-relaxed font-luxury italic tracking-widest border-l-4 border-primary pl-8 py-2 bg-white/5 rounded-r-2xl drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+                        </motion.p>
+                        <motion.p variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }} className="text-gray-300 text-xl mb-12 leading-relaxed font-luxury italic tracking-widest border-l-4 border-primary pl-8 py-2 bg-white/5 rounded-r-2xl drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
                             "Nuestra misión es que cada beat se sienta, cada luz cuente una historia y cada evento sea una leyenda."
-                        </p>
+                        </motion.p>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0 },
+                                show: {
+                                    opacity: 1,
+                                    transition: {
+                                        staggerChildren: 0.1
+                                    }
+                                }
+                            }}
+                            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+                        >
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
+                                    variants={{
+                                        hidden: { opacity: 0, x: -20 },
+                                        show: { opacity: 1, x: 0 }
+                                    }}
                                     whileHover={{ x: 10 }}
                                     className="flex items-center gap-4 group"
                                 >
@@ -51,7 +76,7 @@ const About = () => {
                                     <span className="text-gray-400 font-bold text-sm tracking-wider">{feature.text}</span>
                                 </motion.div>
                             ))}
-                        </div>
+                        </motion.div>
                     </motion.div>
 
                     <motion.div

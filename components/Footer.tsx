@@ -15,10 +15,26 @@ const Footer = () => {
                 <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[80%] h-40 bg-primary/10 blur-[100px] rounded-full" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <motion.div
+                variants={{
+                    hidden: { opacity: 0, y: 30 },
+                    show: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            staggerChildren: 0.1,
+                            duration: 0.8
+                        }
+                    }
+                }}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-100px" }}
+                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+            >
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20 text-center md:text-left">
                     {/* Brand Info */}
-                    <div className="md:col-span-2">
+                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }} className="md:col-span-2">
                         <Link href="/" className="flex items-center justify-center md:justify-start gap-4 mb-8 group">
                             <div className="relative w-16 h-16 transition-transform duration-700 group-hover:rotate-[360deg]">
                                 <img
@@ -43,10 +59,10 @@ const Footer = () => {
                                 <Zap size={28} />
                             </Link>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Quick Links */}
-                    <div>
+                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}>
                         <h3 className="text-white font-black text-sm tracking-[0.3em] mb-8 uppercase">NAVEGACIÓN</h3>
                         <ul className="space-y-6">
                             {["Inicio", "Servicios", "Galería", "Contacto"].map((item) => (
@@ -57,10 +73,10 @@ const Footer = () => {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </motion.div>
 
                     {/* Contact Info */}
-                    <div>
+                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}>
                         <h3 className="text-white font-black text-sm tracking-[0.3em] mb-8 uppercase">CONTACTO</h3>
                         <ul className="space-y-8">
                             <li className="flex items-start justify-center md:justify-start gap-4 text-gray-400 group">
@@ -76,10 +92,10 @@ const Footer = () => {
                                 <span className="text-sm font-bold tracking-wider text-xs">CONTACTO@AUDIOSYNC.COM</span>
                             </li>
                         </ul>
-                    </div>
+                    </motion.div>
                 </div>
 
-                <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 opacity-50">
+                <motion.div variants={{ hidden: { opacity: 0 }, show: { opacity: 0.5 } }} className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
                     <p className="text-gray-500 text-xs font-bold tracking-widest">
                         &copy; {new Date().getFullYear()} AUDIO SYNC. THE RAVE MASTERS.
                     </p>
@@ -87,8 +103,8 @@ const Footer = () => {
                         <Link href="#" className="hover:text-white transition-colors">POLÍTICAS</Link>
                         <Link href="#" className="hover:text-white transition-colors">TÉRMINOS</Link>
                     </div>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </footer>
     );
 };

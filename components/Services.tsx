@@ -72,22 +72,42 @@ const Services = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.2
+                            }
+                        }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+                >
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: index * 0.1 }}
+                            variants={{
+                                hidden: { opacity: 0, y: 50, scale: 0.9 },
+                                show: { opacity: 1, y: 0, scale: 1 }
+                            }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
                             className={`group relative p-10 rounded-3xl glass border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-3 ${service.shadow} animate-pulse-glow`}
                             style={{ animationDelay: `${index * 0.5}s` }}
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`} />
 
-                            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-8 text-black shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
+                            <motion.div
+                                initial={{ rotate: -10, opacity: 0 }}
+                                whileInView={{ rotate: 0, opacity: 1 }}
+                                transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
+                                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-8 text-black shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}
+                            >
                                 {service.icon}
-                            </div>
+                            </motion.div>
 
                             <h3 className="text-2xl font-black text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
                                 {service.title}
@@ -102,7 +122,7 @@ const Services = () => {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

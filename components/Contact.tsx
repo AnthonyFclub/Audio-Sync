@@ -30,17 +30,27 @@ const Contact = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
                     {/* Contact Info */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
+                        variants={{
+                            hidden: { opacity: 0, x: -50 },
+                            show: {
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                    staggerChildren: 0.2,
+                                    duration: 0.8
+                                }
+                            }
+                        }}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, margin: "-100px" }}
                         className="space-y-10"
                     >
                         <div className="glass border border-white/5 p-12 rounded-[2.5rem] shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                            <h3 className="text-3xl font-black text-white mb-10 tracking-tighter decoration-primary/50 underline-offset-8 underline">CONEXIÓN DIRECTA</h3>
+                            <motion.h3 variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }} className="text-3xl font-black text-white mb-10 tracking-tighter decoration-primary/50 underline-offset-8 underline">CONEXIÓN DIRECTA</motion.h3>
 
                             <div className="space-y-10">
-                                <motion.div whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
+                                <motion.div variants={{ hidden: { opacity: 0, x: -20 }, show: { opacity: 1, x: 0 } }} whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
                                     <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20 group-hover:bg-primary group-hover:text-black transition-all">
                                         <Phone size={28} />
                                     </div>
@@ -51,7 +61,7 @@ const Contact = () => {
                                     </div>
                                 </motion.div>
 
-                                <motion.div whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
+                                <motion.div variants={{ hidden: { opacity: 0, x: -20 }, show: { opacity: 1, x: 0 } }} whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
                                     <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center shrink-0 border border-secondary/20 group-hover:bg-secondary group-hover:text-black transition-all">
                                         <Mail size={28} />
                                     </div>
@@ -62,7 +72,7 @@ const Contact = () => {
                                     </div>
                                 </motion.div>
 
-                                <motion.div whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
+                                <motion.div variants={{ hidden: { opacity: 0, x: -20 }, show: { opacity: 1, x: 0 } }} whileHover={{ x: 10 }} className="flex items-start gap-6 group cursor-pointer">
                                     <div className="w-14 h-14 rounded-2xl bg-rave-red/10 flex items-center justify-center shrink-0 border border-rave-red/20 group-hover:bg-rave-red group-hover:text-black transition-all">
                                         <MapPin size={28} />
                                     </div>
@@ -76,21 +86,31 @@ const Contact = () => {
                         </div>
 
                         {/* Little Rave Badge */}
-                        <div className="p-8 glass rounded-3xl border-primary/10 flex items-center gap-6 animate-pulse">
+                        <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, show: { opacity: 1, scale: 1 } }} className="p-8 glass rounded-3xl border-primary/10 flex items-center gap-6 animate-pulse">
                             <Zap className="text-primary" size={40} />
                             <p className="text-white font-black tracking-widest text-sm">RESERVACIONES ABIERTAS PARA TEMPORADA DE FESTIVALES 2026</p>
-                        </div>
+                        </motion.div>
                     </motion.div>
 
                     {/* Contact Form */}
                     <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
+                        variants={{
+                            hidden: { opacity: 0, x: 50 },
+                            show: {
+                                opacity: 1,
+                                x: 0,
+                                transition: {
+                                    staggerChildren: 0.1,
+                                    duration: 0.8
+                                }
+                            }
+                        }}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, margin: "-100px" }}
                     >
                         <form className="glass border border-white/5 p-12 rounded-[2.5rem] space-y-8 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                 <div className="space-y-3">
                                     <label htmlFor="name" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">TU NOMBRE</label>
                                     <input
@@ -109,9 +129,9 @@ const Contact = () => {
                                         placeholder="+52 ..."
                                     />
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="space-y-3">
+                            <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="space-y-3">
                                 <label htmlFor="email" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">EMAIL</label>
                                 <input
                                     type="email"
@@ -119,9 +139,9 @@ const Contact = () => {
                                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary focus:bg-primary/5 transition-all outline-none"
                                     placeholder="hola@ejemplo.com"
                                 />
-                            </div>
+                            </motion.div>
 
-                            <div className="space-y-3">
+                            <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="space-y-3">
                                 <label htmlFor="service" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">SERVICIO</label>
                                 <select
                                     id="service"
@@ -132,9 +152,9 @@ const Contact = () => {
                                     <option value="iluminacion" className="bg-black">SHOW DE LUCES</option>
                                     <option value="paquete" className="bg-black">RAVE COMPLETO</option>
                                 </select>
-                            </div>
+                            </motion.div>
 
-                            <div className="space-y-3">
+                            <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }} className="space-y-3">
                                 <label htmlFor="message" className="text-gray-400 text-xs font-black tracking-widest uppercase ml-1">TU VISIÓN</label>
                                 <textarea
                                     id="message"
@@ -142,14 +162,15 @@ const Contact = () => {
                                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary focus:bg-primary/5 transition-all outline-none"
                                     placeholder="Cuéntanos los detalles de la fiesta..."
                                 />
-                            </div>
+                            </motion.div>
 
-                            <button
+                            <motion.button
+                                variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }}
                                 type="submit"
                                 className="group w-full bg-primary text-black font-black py-5 rounded-2xl shadow-[0_0_30px_rgba(0,243,255,0.4)] hover:shadow-[0_0_50px_rgba(0,243,255,0.8)] transition-all duration-500 flex items-center justify-center gap-3 animate-breathe hover:scale-[1.02] active:scale-[0.98]"
                             >
                                 AGENDAR AHORA <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                            </button>
+                            </motion.button>
                         </form>
                     </motion.div>
                 </div>

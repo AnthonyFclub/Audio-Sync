@@ -61,14 +61,29 @@ const Gallery = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[350px]">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.15
+                            }
+                        }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[350px]"
+                >
                     {images.map((img, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: index * 0.1 }}
+                            variants={{
+                                hidden: { opacity: 0, scale: 0.8, y: 40 },
+                                show: { opacity: 1, scale: 1, y: 0 }
+                            }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
                             className={`relative group overflow-hidden rounded-[2rem] border border-white/5 transition-all duration-700 ${img.glow} ${img.size === "large" ? "md:col-span-2 lg:col-span-2" : ""
                                 }`}
                         >
@@ -89,7 +104,7 @@ const Gallery = () => {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
