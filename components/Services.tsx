@@ -117,11 +117,11 @@ const Services = () => {
                                     alt={service.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
                                 />
-                                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30 group-hover:from-black/70 group-hover:via-black/30 group-hover:to-black/10 transition-colors duration-500" />
                                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
                             </div>
 
-                            <div className="relative z-10">
+                            <div className="relative z-10 backdrop-blur-[2px]">
                                 <motion.div
                                     initial={{ rotate: -10, opacity: 0 }}
                                     whileInView={{ rotate: 0, opacity: 1 }}
@@ -134,15 +134,15 @@ const Services = () => {
                                     </div>
                                 </motion.div>
 
-                                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
+                                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-primary transition-colors tracking-tight [text-shadow:_0_2px_10px_rgb(0_0_0_/_100%)]">
                                     {service.title}
                                 </h3>
 
-                                <p className="text-gray-300 leading-relaxed font-light group-hover:text-white transition-colors duration-500">
+                                <p className="text-gray-100 leading-relaxed font-light group-hover:text-white transition-colors duration-500 [text-shadow:_0_1px_8px_rgb(0_0_0_/_100%)]">
                                     {service.description}
                                 </p>
 
-                                <div className="mt-8 flex items-center gap-2 text-xs font-bold text-gray-500 group-hover:text-white transition-colors cursor-pointer">
+                                <div className="mt-8 flex items-center gap-2 text-xs font-bold text-gray-400 group-hover:text-white transition-colors cursor-pointer drop-shadow-lg">
                                     MÁS INFO <Zap size={12} strokeWidth={2} />
                                 </div>
                             </div>

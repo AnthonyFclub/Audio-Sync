@@ -56,7 +56,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-primary transition-colors">TELÉFONO / WHATSAPP</h4>
-                                        <p className="text-gray-400 text-lg">+52 55 1234 5678</p>
+                                        <p className="text-gray-400 text-lg">+52 9993693122</p>
                                         <p className="text-primary text-xs font-bold mt-1">SOPORTE 24/7 EVENTOS</p>
                                     </div>
                                 </motion.div>
@@ -67,7 +67,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-secondary transition-colors">CORREO ELECTRÓNICO</h4>
-                                        <p className="text-gray-400 text-lg">contacto@audiosync.com</p>
+                                        <p className="text-gray-400 text-lg">audiosyncc@gmail.com</p>
                                         <p className="text-secondary text-xs font-bold mt-1">COTIZACIONES FLASH</p>
                                     </div>
                                 </motion.div>
@@ -78,7 +78,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-black text-sm tracking-widest mb-2 group-hover:text-rave-red transition-colors">BASE DE OPERACIONES</h4>
-                                        <p className="text-gray-400 text-lg">Insurgentes Sur, CDMX</p>
+                                        <p className="text-gray-400 text-lg">Cancún, Riviera Maya</p>
                                         <p className="text-rave-red text-xs font-bold mt-1">MÉXICO</p>
                                     </div>
                                 </motion.div>
@@ -86,9 +86,9 @@ const Contact = () => {
                         </div>
 
                         {/* Little Rave Badge */}
-                        <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, show: { opacity: 1, scale: 1 } }} className="p-8 glass rounded-3xl border-primary/10 flex items-center gap-6 animate-pulse">
+                        <motion.div variants={{ hidden: { opacity: 0, scale: 0.9 }, show: { opacity: 1, scale: 1 } }} className="p-8 glass rounded-3xl border-primary/10 flex items-center gap-6">
                             <Zap className="text-primary" size={40} strokeWidth={1.5} />
-                            <p className="text-white font-black tracking-widest text-sm">RESERVACIONES ABIERTAS PARA TEMPORADA DE FESTIVALES 2026</p>
+                            <p className="text-white font-black tracking-widest text-sm uppercase">Reservaciones abiertas 2026</p>
                         </motion.div>
                     </motion.div>
 

@@ -5,35 +5,22 @@ import Image from "next/image";
 
 const images = [
     {
-        src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop",
-        alt: "ENERGÍA PURA EN ESCENARIO",
+        src: "/images/services/total-events.png",
+        alt: "Experiencia exclusiva",
         size: "large",
-        glow: "hover:shadow-[0_0_40px_rgba(255,0,0,0.4)]"
+        glow: "hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]"
     },
-
     {
         src: "https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=1974&auto=format&fit=crop",
-        alt: "LUZ QUE HIPNOTIZA",
+        alt: "Luces que hipnotizan",
         size: "small",
-        glow: "hover:shadow-[0_0_40px_rgba(188,19,254,0.4)]"
-    },
-    {
-        src: "https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=2070&auto=format&fit=crop",
-        alt: "FESTIVALES SIN LÍMITES",
-        size: "medium",
-        glow: "hover:shadow-[0_0_40px_rgba(57,255,20,0.4)]"
-    },
-    {
-        src: "/gallery-tower.jpg",
-        alt: "EXCLUSIVIDAD NOCTURNA",
-        size: "medium",
         glow: "hover:shadow-[0_0_40px_rgba(255,0,85,0.4)]"
     },
     {
-        src: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop",
-        alt: "NEÓN Y PSICODELIA",
+        src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop",
+        alt: "Dominio absoluto del ritmo",
         size: "large",
-        glow: "hover:shadow-[0_0_40px_rgba(0,243,255,0.4)]"
+        glow: "hover:shadow-[0_0_40px_rgba(188,19,254,0.4)]"
     }
 ];
 
@@ -91,7 +78,9 @@ const Gallery = () => {
                                 src={img.src}
                                 alt={img.alt}
                                 fill
-                                className="object-cover transition-transform duration-[1.5s] group-hover:scale-125 group-hover:rotate-2"
+                                quality={100}
+                                priority
+                                className="object-cover transition-transform duration-[1.5s] group-hover:scale-105 group-hover:rotate-1"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                             <div className="absolute inset-0 flex items-end p-8">

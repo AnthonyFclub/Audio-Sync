@@ -26,8 +26,16 @@ const testimonials = [
 
 const Testimonials = () => {
     return (
-        <section className="py-20 bg-black relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+        <section id="testimonios" className="py-20 bg-black relative overflow-hidden">
+            {/* Dark Pro Premium Background */}
+            <div 
+                className="absolute inset-0 z-0 bg-cover bg-center bg-fixed opacity-30"
+                style={{ backgroundImage: `url('https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=1974&auto=format&fit=crop')` }}
+            />
+            {/* Smooth gradient blends */}
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-0" />
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-0" />
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent z-10" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
@@ -50,9 +58,9 @@ const Testimonials = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white/5 border border-white/10 p-8 rounded-2xl relative hover:border-primary/30 transition-colors duration-300"
+                            className="bg-black/40 backdrop-blur-sm border border-white/10 p-8 rounded-2xl relative hover:border-primary/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,243,255,0.1)] hover:-translate-y-1"
                         >
-                            <Quote className="absolute top-8 right-8 text-white/10" size={40} />
+                            <Quote className="absolute top-8 right-8 text-white/5" size={40} />
 
                             <div className="flex gap-1 mb-6">
                                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -60,11 +68,11 @@ const Testimonials = () => {
                                 ))}
                             </div>
 
-                            <p className="text-gray-300 mb-6 italic leading-relaxed">
+                            <p className="text-gray-300 mb-6 italic leading-relaxed relative z-10">
                                 "{testimonial.content}"
                             </p>
 
-                            <div>
+                            <div className="relative z-10">
                                 <h4 className="text-white font-bold">{testimonial.name}</h4>
                                 <p className="text-primary text-sm">{testimonial.role}</p>
                             </div>

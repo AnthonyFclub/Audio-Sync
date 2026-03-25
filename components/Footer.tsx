@@ -81,15 +81,15 @@ const Footer = () => {
                         <ul className="space-y-8">
                             <li className="flex items-start justify-center md:justify-start gap-4 text-gray-400 group">
                                 <MapPin className="text-primary shrink-0 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
-                                <span className="text-sm font-bold tracking-wider">CDMX, MÉXICO</span>
+                                <span className="text-sm font-bold tracking-wider">CANCÚN, RIVIERA MAYA</span>
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-4 text-gray-400 group">
                                 <Phone className="text-secondary shrink-0 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
-                                <span className="text-sm font-bold tracking-wider">+52 55 1234 5678</span>
+                                <span className="text-sm font-bold tracking-wider">+52 9993693122</span>
                             </li>
                             <li className="flex items-center justify-center md:justify-start gap-4 text-gray-400 group">
                                 <Mail className="text-accent shrink-0 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
-                                <span className="text-sm font-bold tracking-wider text-xs">CONTACTO@AUDIOSYNC.COM</span>
+                                <span className="text-sm font-bold tracking-wider text-xs">AUDIOSYNCC@GMAIL.COM</span>
                             </li>
                         </ul>
                     </motion.div>
