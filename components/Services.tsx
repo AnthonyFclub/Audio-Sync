@@ -7,10 +7,11 @@ const services = [
     {
         icon: <Speaker size={32} strokeWidth={1.5} />,
         title: "RENTA DE AUDIO",
-        description: "Sistemas de sonido de alta fidelidad que golpean el pecho. Para cualquier tamaño de audiencia con marcas líderes.",
+        description: "Sistema de sonido de alta fidelidad",
         color: "from-primary to-blue-600",
         shadow: "shadow-[0_0_20px_rgba(0,243,255,0.3)]",
-        iconColor: "#00f3ff"
+        iconColor: "#00f3ff",
+        image: "/images/services/audio-rental.png"
     },
     {
         icon: <Lightbulb size={32} strokeWidth={1.5} />,
@@ -18,7 +19,8 @@ const services = [
         description: "Cabezas móviles, par LED y efectos especiales láser para crear atmósferas hipnóticas.",
         color: "from-secondary to-purple-600",
         shadow: "shadow-[0_0_20px_rgba(188,19,254,0.3)]",
-        iconColor: "#bc13fe"
+        iconColor: "#bc13fe",
+        image: "/images/services/pro-lighting.png"
     },
     {
         icon: <Music size={32} strokeWidth={1.5} />,
@@ -26,15 +28,17 @@ const services = [
         description: "Consolas Pioneer y controladores de última generación para el desempeño profesional absoluto.",
         color: "from-rave-red to-accent",
         shadow: "shadow-[0_0_20px_rgba(255,0,0,0.3)]",
-        iconColor: "#ff0080"
+        iconColor: "#ff0080",
+        image: "/images/services/dj-equipment.png"
     },
     {
         icon: <Mic2 size={32} strokeWidth={1.5} />,
         title: "MICROFONÍA",
-        description: "Micrófonos inalámbricos de cristalina claridad y todo el soporte técnico que necesitas.",
+        description: "Microfonos de cristalina fidelidad",
         color: "from-neon-green to-emerald-600",
         shadow: "shadow-[0_0_20px_rgba(57,255,20,0.3)]",
-        iconColor: "#39ff14"
+        iconColor: "#39ff14",
+        image: "/images/services/microphones.png"
     },
     {
         icon: <Truck size={32} strokeWidth={1.5} />,
@@ -42,15 +46,17 @@ const services = [
         description: "Ingenieros especializados encargados de la instalación y operación impecable de tu evento.",
         color: "from-accent to-orange-600",
         shadow: "shadow-[0_0_20px_rgba(255,0,85,0.3)]",
-        iconColor: "#ff5500"
+        iconColor: "#ff5500",
+        image: "/images/services/expert-setup.png"
     },
     {
         icon: <Calendar size={32} strokeWidth={1.5} />,
         title: "EVENTOS TOTALES",
-        description: "Desde festivales masivos hasta eventos corporativos exclusivos. El rave no tiene límites.",
+        description: "Yates, cumpleaños, fiestas privadas, bodas, eventos empresariales y más",
         color: "from-blue-600 to-indigo-600",
         shadow: "shadow-[0_0_20px_rgba(37,99,235,0.3)]",
-        iconColor: "#4f46e5"
+        iconColor: "#4f46e5",
+        image: "/images/services/total-events.png"
     }
 ];
 
@@ -101,33 +107,44 @@ const Services = () => {
                                 show: { opacity: 1, y: 0, scale: 1 }
                             }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className={`group relative p-10 rounded-3xl glass border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-3 ${service.shadow} animate-pulse-glow`}
+                            className={`group relative p-10 rounded-3xl overflow-hidden glass border border-white/5 hover:border-white/20 transition-all duration-500 hover:-translate-y-3 ${service.shadow} animate-pulse-glow h-full`}
                             style={{ animationDelay: `${index * 0.5}s` }}
                         >
-                            <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500`} />
+                            {/* Background Image */}
+                            <div className="absolute inset-0 z-0">
+                                <img 
+                                    src={service.image} 
+                                    alt={service.title}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                                />
+                                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500" />
+                                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+                            </div>
 
-                            <motion.div
-                                initial={{ rotate: -10, opacity: 0 }}
-                                whileInView={{ rotate: 0, opacity: 1 }}
-                                transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-                                className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 relative"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl" style={{ backgroundColor: service.iconColor }} />
-                                <div style={{ color: service.iconColor }} className="drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
-                                    {service.icon}
+                            <div className="relative z-10">
+                                <motion.div
+                                    initial={{ rotate: -10, opacity: 0 }}
+                                    whileInView={{ rotate: 0, opacity: 1 }}
+                                    transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
+                                    className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 relative"
+                                >
+                                    <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl" style={{ backgroundColor: service.iconColor }} />
+                                    <div style={{ color: service.iconColor }} className="drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                        {service.icon}
+                                    </div>
+                                </motion.div>
+
+                                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
+                                    {service.title}
+                                </h3>
+
+                                <p className="text-gray-300 leading-relaxed font-light group-hover:text-white transition-colors duration-500">
+                                    {service.description}
+                                </p>
+
+                                <div className="mt-8 flex items-center gap-2 text-xs font-bold text-gray-500 group-hover:text-white transition-colors cursor-pointer">
+                                    MÁS INFO <Zap size={12} strokeWidth={2} />
                                 </div>
-                            </motion.div>
-
-                            <h3 className="text-2xl font-black text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
-                                {service.title}
-                            </h3>
-
-                            <p className="text-gray-400 leading-relaxed font-light">
-                                {service.description}
-                            </p>
-
-                            <div className="mt-8 flex items-center gap-2 text-xs font-bold text-gray-500 group-hover:text-primary transition-colors cursor-pointer">
-                                MÁS INFO <Zap size={12} strokeWidth={2} />
                             </div>
                         </motion.div>
                     ))}

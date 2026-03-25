@@ -6,11 +6,10 @@ import Image from "next/image";
 
 const features = [
     { icon: <Clock size={20} strokeWidth={1.5} />, text: "3+ AÑOS DE EXPERIENCIA" },
-    { icon: <Zap size={20} strokeWidth={1.5} />, text: "EQUIPOS TOP (JBL, BOSE, SHURE)" },
+    { icon: <Zap size={20} strokeWidth={1.5} />, text: "Equipos top" },
     { icon: <ShieldCheck size={20} strokeWidth={1.5} />, text: "PERSONAL TÉCNICO ÉLITE" },
-    { icon: <Target size={20} strokeWidth={1.5} />, text: "PUNTUALIDAD MILIMÉTRICA" },
     { icon: <MessageSquare size={20} strokeWidth={1.5} />, text: "SERVICIO 100% PERSONALIZADO" },
-    { icon: <Globe size={20} strokeWidth={1.5} />, text: "COBERTURA TOTAL CDMX Y AM" }
+    { icon: <Globe size={20} strokeWidth={1.5} />, text: "Cancún, Playa del Carmen, Riviera Maya, CDMX" }
 ];
 
 const About = () => {
