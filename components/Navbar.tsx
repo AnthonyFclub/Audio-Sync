@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Instagram, Phone } from "lucide-react";
+import { Menu, X, Instagram, Facebook, Phone } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -129,12 +129,15 @@ const Navbar = () => {
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="mt-8 flex gap-6"
+                                className="mt-8 flex gap-5"
                             >
-                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
+                                <a href="https://www.instagram.com/hau_music/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @hau_music" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
                                     <Instagram size={24} />
                                 </a>
-                                <a href="https://wa.me/529993683122" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
+                                <a href="https://www.facebook.com/profile.php?id=61593001150127" target="_blank" rel="noopener noreferrer" aria-label="Facebook Audio Syncc" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
+                                    <Facebook size={24} />
+                                </a>
+                                <a href="https://wa.me/529993683122" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
                                     <Phone size={24} />
                                 </a>
                             </motion.div>
