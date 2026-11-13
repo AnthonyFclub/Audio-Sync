@@ -1,41 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
-const PsychedelicBackground = () => {
+const Background = () => {
     return (
-        <div className="fixed inset-0 z-[-1] overflow-hidden bg-black">
-            {/* Base Pure Jungle Image with Breathing Effect */}
-            <motion.div
-                initial={{ scale: 1.05, opacity: 0 }}
-                animate={{
-                    scale: [1.05, 1.15, 1.05],
-                    opacity: 1
-                }}
-                transition={{
-                    scale: { duration: 15, repeat: Infinity, ease: "easeInOut" },
-                    opacity: { duration: 2 }
-                }}
-                className="absolute inset-0 z-0"
-            >
+        <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#030408]">
+            {/* Pure Metallic Blue & Black Brushed Texture with Exact 50/50 Smooth Diffuse Blend */}
+            <div className="absolute inset-0 z-0">
                 <img
-                    src="/jungle-vivid-bg.jpg"
-                    alt="Jungle Background"
-                    className="w-full h-full object-cover opacity-100"
+                    src="/metallic-bg.jpg"
+                    alt="Audio Sync Metallic Texture"
+                    className="w-full h-full object-cover object-center opacity-90"
                 />
-            </motion.div>
-
-            {/* Neon Glare/Light Leaks */}
-            <div className="absolute inset-0 z-20 pointer-events-none">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[180px] animate-pulse" />
-                <div className="absolute -bottom-20 -left-20 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[200px] animate-pulse" style={{ animationDelay: '3s' }} />
             </div>
 
-            {/* Light Vignette */}
-            <div className="absolute inset-0 z-40 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.6)_100%)] pointer-events-none" />
+            {/* Subtle Metallic Sheen Drift Animation */}
+            <motion.div
+                initial={{ opacity: 0.3 }}
+                animate={{
+                    opacity: [0.25, 0.45, 0.25],
+                    scale: [1, 1.03, 1]
+                }}
+                transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute inset-0 z-10 pointer-events-none mix-blend-overlay"
+            >
+                <div className="w-full h-full bg-gradient-to-tr from-black via-transparent to-blue-500/20" />
+            </motion.div>
+
+            {/* Ambient Blue Metallic Reflection Layer */}
+            <div className="absolute inset-0 z-20 pointer-events-none">
+                <div className="absolute -top-1/4 -right-1/4 w-[70vw] h-[70vw] rounded-full bg-blue-600/15 blur-[140px]" />
+                <div className="absolute -bottom-1/4 -left-1/4 w-[60vw] h-[60vw] rounded-full bg-black/80 blur-[100px]" />
+            </div>
+
+            {/* Soft Edge Vignette for Crisp Contrast */}
+            <div className="absolute inset-0 z-30 bg-gradient-to-b from-[#030408]/60 via-transparent to-[#030408]/80 pointer-events-none" />
         </div>
     );
 };
 
-export default PsychedelicBackground;
+export default Background;
+
+

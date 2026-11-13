@@ -2,115 +2,123 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Music, Zap, Sparkles } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, Volume2, Sparkles, ChevronDown } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-16">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.94 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="-mt-12 md:-mt-24"
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="flex flex-col items-center"
                 >
+                    {/* Quality Pill Badge */}
+                    <motion.div
+                        initial={{ opacity: 0, y: -15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1, duration: 0.6 }}
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/30 text-sky-400 text-xs font-black tracking-[0.3em] uppercase mb-6 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
+                    >
+                        <Volume2 size={14} className="text-blue-400" />
+                        <span>PRO AUDIO & LIGHTING RENTAL</span>
+                    </motion.div>
 
-
-                    <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)] mb-6 md:mb-10">
+                    {/* Main Title */}
+                    <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] mb-3">
                         <motion.span
-                            animate={{ color: ["#ffffff", "#00f3ff", "#ffffff", "#bc13fe", "#ffffff"] }}
-                            transition={{ duration: 10, repeat: Infinity }}
+                            animate={{
+                                textShadow: [
+                                    "0px 0px 20px rgba(59,130,246,0.3)",
+                                    "0px 0px 40px rgba(59,130,246,0.7)",
+                                    "0px 0px 20px rgba(59,130,246,0.3)"
+                                ]
+                            }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                             className="block"
                         >
                             AUDIO SYNC
                         </motion.span>
                     </h1>
 
+                    {/* Sub-Brand Indicator */}
+                    <div className="text-xs sm:text-sm md:text-base font-black tracking-[0.45em] text-blue-400 uppercase mb-4 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
+                        R E N T A L
+                    </div>
+
+                    {/* Italic Luxury Subtitle */}
                     <motion.div
-                        animate={{ y: [0, -8, 0] }}
-                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="mt-14 md:mt-16"
+                        animate={{ y: [0, -4, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                        className="mt-2"
                     >
-                        <motion.span
-                            animate={{
-                                textShadow: [
-                                    "0px 0px 10px rgba(255,255,255,0.2)",
-                                    "0px 0px 30px rgba(255,255,255,0.9)",
-                                    "0px 0px 10px rgba(255,255,255,0.2)"
-                                ],
-                                opacity: [0.85, 1, 0.85]
-                            }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="block py-2 text-4xl md:text-6xl lg:text-7xl font-luxury italic leading-normal tracking-tight text-white font-light"
-                        >
+                        <span className="block py-1 text-2xl sm:text-4xl md:text-5xl font-luxury italic leading-normal tracking-tight text-slate-100 font-light drop-shadow-[0_0_25px_rgba(96,165,250,0.3)]">
                             Tu experiencia comienza aquí
-                        </motion.span>
+                        </span>
                     </motion.div>
 
+                    {/* Value Statement Subtitle */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="mt-6 text-xs sm:text-sm md:text-base font-bold tracking-[0.2em] sm:tracking-[0.25em] text-sky-200/90 uppercase text-center max-w-2xl drop-shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+                    >
+                        Sonido que se siente <span className="text-blue-400 mx-2 font-black">◆</span> Iluminación que hipnotiza
+                    </motion.p>
 
+                    {/* CTAs */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5"
+                    >
+                        <Link
+                            href="#contacto"
+                            className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white font-black text-xs sm:text-sm tracking-widest uppercase shadow-[0_0_35px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_rgba(59,130,246,0.9)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 border border-sky-300/40"
+                        >
+                            COTIZAR EVENTO
+                            <ArrowRight size={18} strokeWidth={2.5} />
+                        </Link>
+                        <Link
+                            href="#servicios"
+                            className="w-full sm:w-auto px-8 py-4 rounded-full glass border border-white/15 text-white hover:border-blue-400/50 hover:bg-white/10 font-black text-xs sm:text-sm tracking-widest uppercase shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 text-center"
+                        >
+                            EXPLORAR SERVICIOS
+                        </Link>
+                    </motion.div>
                 </motion.div>
             </div>
 
-            {/* Atmosphere/Psychology Layer */}
-
-            {/* Glowing Eyes Effect - Improved Psychological Touch */}
-            <div className="absolute bottom-20 left-10 md:left-40 opacity-30 pointer-events-none">
-                <div className="flex gap-4">
-                    <motion.div
-                        animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="w-1.5 h-1.5 rounded-full bg-rave-red shadow-[0_0_15px_#ff0000]"
-                    />
-                    <motion.div
-                        animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
-                        className="w-1.5 h-1.5 rounded-full bg-rave-red shadow-[0_0_15px_#ff0000]"
-                    />
+            {/* Ambient Acoustic Laser Dots / Stage Accents */}
+            <div className="absolute bottom-28 left-8 md:left-24 opacity-60 pointer-events-none">
+                <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_12px_#38bdf8] animate-pulse" />
+                    <span className="text-[10px] font-black tracking-[0.2em] text-blue-300 uppercase">HIGH FIDELITY AUDIO</span>
                 </div>
             </div>
 
-            <div className="absolute top-40 right-10 md:right-60 opacity-20 pointer-events-none">
-                <div className="flex gap-2">
-                    <motion.div
-                        animate={{ opacity: [0, 1, 0] }}
-                        transition={{ duration: 5, repeat: Infinity, delay: 3 }}
-                        className="w-1 h-1 rounded-full bg-primary shadow-[0_0_10px_#00f3ff]"
-                    />
-                    <motion.div
-                        animate={{ opacity: [0, 1, 0] }}
-                        transition={{ duration: 5, repeat: Infinity, delay: 3.1 }}
-                        className="w-1 h-1 rounded-full bg-primary shadow-[0_0_10px_#00f3ff]"
-                    />
+            <div className="absolute top-36 right-8 md:right-24 opacity-60 pointer-events-none">
+                <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-black tracking-[0.2em] text-sky-300 uppercase">CANCÚN & PLAYA DEL CARMEN</span>
+                    <div className="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_12px_#38bdf8] animate-pulse" />
                 </div>
             </div>
-
-            {/* Bottom Subtitle */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="absolute bottom-40 md:bottom-48 left-0 w-full flex items-center justify-center px-4 z-10"
-            >
-                <div className="opacity-90">
-                    <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-black tracking-[0.15em] sm:tracking-[0.3em] text-white uppercase drop-shadow-[0_0_15px_rgba(0,243,255,0.6)] text-center">
-                        Sonido que se siente <span className="text-secondary neon-text mx-2 sm:mx-4 text-[10px] md:text-sm align-middle">♦</span> Iluminación que hipnotiza
-                    </p>
-                </div>
-            </motion.div>
 
             {/* Scroll Indicator */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                transition={{ delay: 1.5, duration: 1 }}
+                className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer pointer-events-none"
             >
-                <div className="w-8 h-14 border-2 border-white/10 rounded-full flex justify-center p-2 glass">
+                <div className="w-7 h-12 border-2 border-blue-500/30 rounded-full flex justify-center p-1.5 glass">
                     <motion.div
-                        animate={{ y: [0, 24, 0], opacity: [0.3, 1, 0.3] }}
-                        transition={{ repeat: Infinity, duration: 2 }}
-                        className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#00f3ff]"
+                        animate={{ y: [0, 18, 0], opacity: [0.4, 1, 0.4] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        className="w-1.5 h-1.5 bg-sky-400 rounded-full shadow-[0_0_10px_#38bdf8]"
                     />
                 </div>
             </motion.div>
@@ -119,3 +127,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

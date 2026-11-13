@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Instagram, Phone } from "lucide-react";
-import Image from "next/image";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +11,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 40);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -28,39 +27,40 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-6"
+            className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className={`glass rounded-full px-6 py-2 flex items-center justify-between border-white/5 shadow-2xl transition-all duration-500 ${scrolled ? "bg-black/80" : "bg-transparent"}`}>
+                <div className={`glass rounded-full px-5 sm:px-6 py-2.5 flex items-center justify-between border-blue-500/20 shadow-2xl transition-all duration-500 ${scrolled ? "bg-[#060a18]/90 shadow-[0_4px_30px_rgba(0,0,0,0.8)]" : "bg-[#060a18]/50"}`}>
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group">
-                        <div className="relative w-12 h-12 transition-transform duration-700 group-hover:rotate-[360deg]">
+                        <div className="relative w-10 h-10 sm:w-11 sm:h-11 transition-transform duration-700 group-hover:scale-110">
                             <img
-                                src="/logo-official.png"
-                                alt="Audio Sync Logo"
-                                className="w-full h-full object-contain animate-heartbeat"
+                                src="/logo-official.svg"
+                                alt="Audio Sync Rental"
+                                className="w-full h-full object-contain drop-shadow-[0_0_12px_rgba(59,130,246,0.6)]"
                             />
                         </div>
-                        <span
-                            className="text-2xl font-black tracking-tighter animate-silver-shine drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
-                            style={{ animationDelay: '1.8s' }}
-                        >
-                            AUDIO SYNC
-                        </span>
+                        <div className="flex flex-col">
+                            <span className="text-xl sm:text-2xl font-black tracking-tighter text-white group-hover:text-blue-400 transition-colors drop-shadow-[0_0_10px_rgba(59,130,246,0.3)] leading-none">
+                                AUDIO SYNC
+                            </span>
+                            <span className="text-[9px] font-bold tracking-[0.3em] text-blue-400 leading-none mt-0.5">
+                                RENTAL
+                            </span>
+                        </div>
                     </Link>
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-8">
-                        {navLinks.map((link, index) => (
+                        {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-bold tracking-widest relative group animate-silver-shine drop-shadow-[0_0_5px_rgba(255,255,255,0.1)]"
-                                style={{ animationDelay: `${(navLinks.length - index) * 0.3}s` }}
+                                className="text-xs font-black tracking-widest text-slate-300 hover:text-white transition-colors relative group py-1"
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#00f3ff]" />
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-sky-400 transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#38bdf8]" />
                             </Link>
                         ))}
                     </div>
@@ -69,24 +69,20 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center gap-4">
                         <Link
                             href="#contacto"
-                            className="px-6 py-2 border border-white/20 bg-white/5 rounded-full hover:bg-white/10 hover:border-white/40 hover:scale-105 transition-all duration-300 flex items-center justify-center shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm group"
+                            className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-sky-500 text-white font-black text-xs tracking-widest uppercase shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.8)] hover:scale-105 active:scale-95 transition-all duration-300 border border-blue-400/30"
                         >
-                            <span
-                                className="text-sm font-bold tracking-widest animate-silver-shine drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]"
-                                style={{ animationDelay: '0s' }}
-                            >
-                                COTIZAR
-                            </span>
+                            COTIZAR
                         </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center transition-all duration-300">
+                    <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-white hover:text-primary transition-colors hover:scale-110 active:scale-90"
+                            className="text-white hover:text-blue-400 transition-colors p-1"
+                            aria-label="Toggle Menu"
                         >
-                            {isOpen ? <X size={28} /> : <Menu size={28} />}
+                            {isOpen ? <X size={26} /> : <Menu size={26} />}
                         </button>
                     </div>
                 </div>
@@ -99,27 +95,30 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "100vh" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center md:hidden overflow-hidden"
+                        className="fixed inset-0 bg-[#060810]/98 backdrop-blur-2xl z-40 flex flex-col items-center justify-center md:hidden overflow-hidden"
                     >
-                        <div className="absolute top-10 right-10">
-                            <button onClick={() => setIsOpen(false)} className="text-white">
-                                <X size={40} />
+                        <div className="absolute top-6 right-6">
+                            <button onClick={() => setIsOpen(false)} className="text-white p-2" aria-label="Close Menu">
+                                <X size={32} />
                             </button>
                         </div>
 
-                        <div className="flex flex-col items-center gap-8 px-4">
+                        <div className="flex flex-col items-center gap-7 px-4 text-center">
+                            <div className="w-20 h-20 mb-2">
+                                <img src="/logo-official.svg" alt="Audio Sync" className="w-full h-full object-contain drop-shadow-[0_0_25px_rgba(59,130,246,0.7)]" />
+                            </div>
+
                             {navLinks.map((link, i) => (
                                 <motion.div
                                     key={link.name}
-                                    initial={{ x: -20, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    transition={{ delay: i * 0.1 }}
+                                    initial={{ y: 20, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ delay: i * 0.08 }}
                                 >
                                     <Link
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className="text-4xl font-black animate-silver-shine tracking-tighter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
-                                        style={{ animationDelay: `${(navLinks.length - i) * 0.3}s` }}
+                                        className="text-2xl font-black text-white hover:text-blue-400 tracking-wider transition-colors drop-shadow-[0_0_10px_rgba(59,130,246,0.4)]"
                                     >
                                         {link.name}
                                     </Link>
@@ -129,22 +128,22 @@ const Navbar = () => {
                             <motion.div
                                 initial={{ y: 20, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
-                                transition={{ delay: 0.6 }}
-                                className="mt-12 flex gap-8"
+                                transition={{ delay: 0.5 }}
+                                className="mt-8 flex gap-6"
                             >
-                                <Link href="#" className="p-4 glass rounded-full text-white hover:text-primary transition-colors group">
-                                    <Instagram size={32} className="group-hover:scale-110 transition-transform" />
-                                </Link>
-                                <Link href="#" className="p-4 glass rounded-full text-white hover:text-primary transition-colors group">
-                                    <Phone size={32} className="group-hover:scale-110 transition-transform" />
-                                </Link>
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
+                                    <Instagram size={24} />
+                                </a>
+                                <a href="https://wa.me/529993683122" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
+                                    <Phone size={24} />
+                                </a>
                             </motion.div>
                         </div>
 
                         {/* Animated background elements for mobile menu */}
-                        <div className="absolute top-0 left-0 w-full h-full z-[-1] opacity-20">
-                            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-[100px] animate-pulse" />
-                            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-secondary rounded-full blur-[100px] animate-pulse" />
+                        <div className="absolute top-0 left-0 w-full h-full z-[-1] opacity-30 pointer-events-none">
+                            <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-600 rounded-full blur-[120px] animate-pulse" />
+                            <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-indigo-600 rounded-full blur-[120px] animate-pulse" />
                         </div>
                     </motion.div>
                 )}
@@ -154,3 +153,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

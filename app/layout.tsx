@@ -28,17 +28,17 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Audio Sync – Renta de Audio e Iluminación para tus Eventos",
-  description: "Renta de audio profesional, iluminación y equipos para eventos. Audio Sync ofrece soluciones para conciertos, eventos corporativos y sociales.",
+  title: "Audio Sync Rental – Renta de Audio Profesional e Iluminación",
+  description: "Renta de audio profesional de alta fidelidad, iluminación robótica y producción técnica para bodas, festivales, conciertos y eventos corporativos en Cancún y Playa del Carmen.",
   openGraph: {
-    title: "Audio Sync – Elite Audio & Lighting",
-    description: "Transformamos cualquier espacio en el epicentro de la fiesta. Sonido de alto impacto e iluminación hipnótica.",
+    title: "Audio Sync Rental – High Fidelity Audio & Production",
+    description: "Sonido que se siente, iluminación que hipnotiza. Renta de equipo para eventos de alta gama.",
     images: [
       {
-        url: "/logo-og.png",
+        url: "/logo-official.svg",
         width: 800,
         height: 800,
-        alt: "Audio Sync Logo",
+        alt: "Audio Sync Rental Logo",
       },
     ],
     locale: "es_MX",
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audio Sync – Elite Audio & Lighting",
-    description: "Transformamos cualquier espacio en el epicentro de la fiesta.",
-    images: ["/logo-og.png"],
+    title: "Audio Sync Rental – High Fidelity Audio & Production",
+    description: "Sonido que se siente, iluminación que hipnotiza.",
+    images: ["/logo-official.svg"],
   },
   icons: {
-    icon: "/logo-og.png",
-    apple: "/logo-og.png",
+    icon: "/logo-official.svg",
+    apple: "/logo-official.svg",
   },
 };
 

@@ -5,46 +5,44 @@ import Image from "next/image";
 
 const images = [
     {
-        src: "/images/services/total-events.png",
-        alt: "Experiencia exclusiva",
+        src: "/images/yacht-session.jpg",
+        alt: "Yacht & Catamaran Sessions // Cancún",
         size: "large",
-        glow: "hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]"
+        glow: "hover:shadow-[0_0_40px_rgba(59,130,246,0.5)]"
     },
     {
-        src: "https://images.unsplash.com/photo-1545128485-c400e7702796?q=80&w=1974&auto=format&fit=crop",
-        alt: "Luces que hipnotizan",
+        src: "/images/services/dj-equipment.png",
+        alt: "Pioneer DJ Setups & Booths",
         size: "small",
-        glow: "hover:shadow-[0_0_40px_rgba(255,0,85,0.4)]"
+        glow: "hover:shadow-[0_0_40px_rgba(56,189,248,0.5)]"
     },
     {
-        src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop",
-        alt: "Dominio absoluto del ritmo",
+        src: "/images/techno-rave.jpg",
+        alt: "Underground Raves & Secret Villa Parties",
         size: "large",
-        glow: "hover:shadow-[0_0_40px_rgba(188,19,254,0.4)]"
+        glow: "hover:shadow-[0_0_40px_rgba(37,99,235,0.5)]"
     }
 ];
 
 const Gallery = () => {
     return (
         <section id="galeria" className="py-24 relative overflow-hidden">
-
-
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.8 }}
                     className="text-center mb-20"
                 >
-                    <div className="inline-block px-4 py-1 rounded-full glass border-secondary/20 text-secondary text-xs font-black tracking-[0.3em] mb-4">
-                        EL PORTAFOLIO
+                    <div className="inline-block px-4 py-1.5 rounded-full glass border-blue-500/30 text-blue-400 text-xs font-black tracking-[0.3em] mb-4 shadow-[0_0_15px_rgba(59,130,246,0.2)] uppercase">
+                        VIBRA EN VIVO // PLAYLIST & EVENTS
                     </div>
-                    <h2 className="text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter">
-                        MIRA LA <span className="text-secondary neon-text">MAGIA</span>
+                    <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase">
+                        SONIDO QUE <span className="text-blue-500 neon-text">REVIENTA</span>
                     </h2>
-                    <p className="text-white max-w-2xl mx-auto text-2xl md:text-3xl font-luxury italic tracking-wide leading-relaxed drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-                        Una muestra de la potencia y el estilo que Audio Sync lleva a cada escenario.
+                    <p className="text-slate-200 max-w-2xl mx-auto text-xl sm:text-2xl md:text-3xl font-luxury italic tracking-wide leading-relaxed drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                        Desde sesiones privadas en altamar hasta raves subterráneos en la selva y la playa.
                     </p>
                 </motion.div>
 
@@ -67,28 +65,27 @@ const Gallery = () => {
                         <motion.div
                             key={index}
                             variants={{
-                                hidden: { opacity: 0, scale: 0.8, y: 40 },
+                                hidden: { opacity: 0, scale: 0.9, y: 30 },
                                 show: { opacity: 1, scale: 1, y: 0 }
                             }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className={`relative group overflow-hidden rounded-[2rem] border border-white/5 transition-all duration-700 ${img.glow} ${img.size === "large" ? "md:col-span-2 lg:col-span-2" : ""
+                            transition={{ duration: 0.7, ease: "easeOut" }}
+                            className={`relative group overflow-hidden rounded-[2rem] border border-blue-500/20 transition-all duration-700 ${img.glow} ${img.size === "large" ? "md:col-span-2 lg:col-span-2" : ""
                                 }`}
                         >
                             <Image
                                 src={img.src}
                                 alt={img.alt}
                                 fill
-                                quality={100}
                                 priority
-                                className="object-cover transition-transform duration-[1.5s] group-hover:scale-105 group-hover:rotate-1"
+                                className="object-cover transition-transform duration-[1.5s] group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-black/30 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
                             <div className="absolute inset-0 flex items-end p-8">
-                                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <p className="text-white font-black text-2xl tracking-tighter neon-text opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
+                                    <p className="text-white font-black text-2xl tracking-tight text-shadow drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">
                                         {img.alt}
                                     </p>
-                                    <div className="w-0 group-hover:w-full h-1 bg-secondary mt-2 transition-all duration-500 shadow-[0_0_10px_#bc13fe]" />
+                                    <div className="w-0 group-hover:w-full h-1 bg-gradient-to-r from-blue-500 to-sky-400 mt-2 transition-all duration-500 shadow-[0_0_10px_#38bdf8]" />
                                 </div>
                             </div>
                         </motion.div>
@@ -100,3 +97,4 @@ const Gallery = () => {
 };
 
 export default Gallery;
+

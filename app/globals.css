@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
+  --color-background: #060810;
   --color-foreground: #ffffff;
 
-  --color-primary: #00f3ff;
-  --color-secondary: #bc13fe;
-  --color-accent: #ff0055;
-  --color-rave-red: #ff0000;
-  --color-neon-green: #39ff14;
+  --color-primary: #3b82f6;
+  --color-primary-glow: #60a5fa;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary: #2563eb;
+  --color-accent: #38bdf8;
+  --color-navy: #0b112c;
+  --color-royal: #1e40af;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -17,40 +19,37 @@
   --font-psycho: 'Outfit', sans-serif;
 
   @keyframes breathe {
-
     0%,
     100% {
       transform: scale(1);
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     50% {
-      transform: scale(1.05);
+      transform: scale(1.04);
       opacity: 1;
     }
   }
 
   @keyframes pulse-glow {
-
     0%,
     100% {
-      box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.35);
     }
 
     50% {
-      box-shadow: 0 0 25px rgba(0, 243, 255, 0.8);
+      box-shadow: 0 0 35px rgba(59, 130, 246, 0.75);
     }
   }
 
   @keyframes sway {
-
     0%,
     100% {
-      transform: rotate(-2deg);
+      transform: rotate(-1.5deg);
     }
 
     50% {
-      transform: rotate(2deg);
+      transform: rotate(1.5deg);
     }
   }
 
@@ -59,14 +58,13 @@
   --animate-sway: sway 6s ease-in-out infinite;
 
   @keyframes heartbeat {
-
     0%,
     100% {
       transform: scale(1);
     }
 
     14% {
-      transform: scale(1.15);
+      transform: scale(1.08);
     }
 
     28% {
@@ -74,7 +72,7 @@
     }
 
     42% {
-      transform: scale(1.15);
+      transform: scale(1.08);
     }
 
     70% {
@@ -82,11 +80,11 @@
     }
   }
 
-  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite;
+  --animate-heartbeat: heartbeat 2s ease-in-out infinite;
 }
 
 :root {
-  --background: #000000;
+  --background: #060810;
   --foreground: #ffffff;
 }
 
@@ -98,9 +96,18 @@ body {
 }
 
 .glass {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(6, 10, 24, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(6, 10, 25, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(37, 99, 235, 0.2);
 }
 
 .font-signature {
@@ -110,7 +117,6 @@ body {
 }
 
 @keyframes pulse-slow {
-
   0%,
   100% {
     opacity: 0.7;
@@ -143,11 +149,11 @@ body {
 
 .animate-silver-shine {
   background: linear-gradient(110deg,
-      #8f8f8f 0%,
-      #8f8f8f 40%,
+      #94a3b8 0%,
+      #cbd5e1 40%,
       #ffffff 50%,
-      #8f8f8f 60%,
-      #8f8f8f 100%);
+      #93c5fd 60%,
+      #60a5fa 100%);
   background-size: 200% auto;
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
@@ -158,7 +164,11 @@ body {
 }
 
 .neon-text {
-  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.9), 0 0 24px rgba(37, 99, 235, 0.6);
+}
+
+.neon-cyan-text {
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.9), 0 0 24px rgba(14, 165, 233, 0.6);
 }
 
 .font-rave {
@@ -169,74 +179,15 @@ body {
   color: #fff;
 }
 
-.glitch-text {
-  position: relative;
-  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
-    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  animation: glitch 500ms infinite;
-}
-
-.glitch-text span {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-@keyframes glitch {
-  0% {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-
-  14% {
-    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
-      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-
-  15% {
-    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-
-  49% {
-    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
-      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-
-  50% {
-    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75),
-      0 -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-
-  99% {
-    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
-      0.05em 0 0 rgba(0, 255, 0, 0.75),
-      0 -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-
-  100% {
-    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
-      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
-      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
-  }
-}
-
 @keyframes radiant-glow {
-
   0%,
   100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
-    opacity: 0.85;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(96, 165, 250, 0.3);
+    opacity: 0.9;
   }
 
   50% {
-    text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 45px rgba(255, 255, 255, 0.6), 0 0 70px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 25px rgba(59, 130, 246, 0.95), 0 0 45px rgba(56, 189, 248, 0.7), 0 0 70px rgba(37, 99, 235, 0.5);
     opacity: 1;
   }
 }
