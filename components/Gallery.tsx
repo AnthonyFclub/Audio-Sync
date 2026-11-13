@@ -3,15 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Sparkles, X, ChevronLeft, ChevronRight, MessageCircle, MapPin, Maximize2 } from "lucide-react";
+import { Sparkles, X, ChevronLeft, ChevronRight, MessageCircle, Maximize2 } from "lucide-react";
 
 interface Experience {
     id: number;
     src: string;
     title: string;
-    tag: string;
     description: string;
-    align: "left" | "right" | "center";
+    gridSpan: string; // Tailwind grid span classes
 }
 
 const experiences: Experience[] = [
@@ -19,57 +18,50 @@ const experiences: Experience[] = [
         id: 1,
         src: "/images/experiencias/IMG_7675.jpeg",
         title: "YACHT & CATAMARAN SESSION",
-        tag: "CANCÚN // CARIBBEAN SEA",
         description: "Cabina Pioneer XDJ de última generación en altamar sobre las aguas turquesas del Caribe.",
-        align: "left",
+        gridSpan: "col-span-1 md:col-span-2 lg:col-span-8 h-[380px] sm:h-[450px] lg:h-[480px]",
     },
     {
         id: 2,
-        src: "/images/experiencias/IMG_2764.jpeg",
-        title: "BEACH CLUB SUNSET",
-        tag: "PLAYA DEL CARMEN // WATERFRONT",
-        description: "Set de sonido pro y cabina frente al mar para vibras de atardecer y sesiones underground.",
-        align: "right",
+        src: "/images/experiencias/IMG_7491.jpeg",
+        title: "BANDA EN VIVO & ACÚSTICA",
+        description: "Microfonía inalámbrica, monitores de piso y torres de audio para música en vivo de alta fidelidad.",
+        gridSpan: "col-span-1 md:col-span-2 lg:col-span-4 h-[380px] sm:h-[450px] lg:h-[480px]",
     },
     {
         id: 3,
-        src: "/images/experiencias/IMG_7491.jpeg",
-        title: "BANDA EN VIVO & ACÚSTICA",
-        tag: "VILLA RESIDENCIAL // EVENTO PRIVADO",
-        description: "Microfonía inalámbrica, monitores de piso y torres de audio para música en vivo de alta fidelidad.",
-        align: "left",
+        src: "/images/experiencias/IMG_2764.jpeg",
+        title: "BEACH CLUB SUNSET",
+        description: "Set de sonido pro y cabina frente al mar para atardeceres y sesiones de música electrónica.",
+        gridSpan: "col-span-1 md:col-span-1 lg:col-span-4 h-[320px] sm:h-[380px] lg:h-[400px]",
     },
     {
         id: 4,
         src: "/images/experiencias/IMG_3220.jpeg",
         title: "WATERFRONT DECK VIBES",
-        tag: "ISLA MUJERES // BEACH DECK",
-        description: "Torres activas de alta presión acústica con mezcla directa junto al muelle y la brisa marina.",
-        align: "right",
+        description: "Torres activas de alta fidelidad con mezcla directa junto al muelle y la brisa marina.",
+        gridSpan: "col-span-1 md:col-span-1 lg:col-span-4 h-[320px] sm:h-[380px] lg:h-[400px]",
     },
     {
         id: 5,
         src: "/images/experiencias/IMG_2181.jpeg",
         title: "CARIBBEAN CRUISE VIBES",
-        tag: "CATAMARÁN VIP // CANCÚN",
         description: "Sonido envolvente e impecable que navega contigo con potencia cristalina.",
-        align: "left",
+        gridSpan: "col-span-1 md:col-span-2 lg:col-span-4 h-[320px] sm:h-[380px] lg:h-[400px]",
     },
     {
         id: 6,
         src: "/images/experiencias/IMG_8480.jpeg",
         title: "SUNSET VILLA TECHNO SESSION",
-        tag: "RESIDENCIA PRIVADA // RIVIERA MAYA",
         description: "Montaje limpio de cabina y subwoofers para raves y eventos privados.",
-        align: "right",
+        gridSpan: "col-span-1 md:col-span-1 lg:col-span-5 h-[380px] sm:h-[450px] lg:h-[480px]",
     },
     {
         id: 7,
         src: "/images/experiencias/IMG_7506.jpeg",
         title: "SISTEMA INTEGRAL DE AUDIO & ILUMINACIÓN",
-        tag: "PRODUCCIÓN ÉLITE // SALÓN & EXTERIOR",
         description: "Ingeniería de sonido, ecualización acústica y microfonía de máxima fidelidad.",
-        align: "center",
+        gridSpan: "col-span-1 md:col-span-1 lg:col-span-7 h-[380px] sm:h-[450px] lg:h-[480px]",
     }
 ];
 
@@ -95,14 +87,14 @@ const Gallery = () => {
             {/* Alias anchor for #galeria compatibility */}
             <div id="galeria" className="absolute -top-24 left-0 pointer-events-none" />
 
-            <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="w-full max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 {/* Header Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-16 sm:mb-24"
+                    className="text-center mb-16 sm:mb-20"
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/30 text-blue-400 text-xs font-black tracking-[0.3em] uppercase mb-4 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
                         <Sparkles size={14} className="text-sky-400" />
@@ -116,81 +108,53 @@ const Gallery = () => {
                     </p>
                 </motion.div>
 
-                {/* Cascading Intertwined Staircase Layout */}
-                <div className="relative flex flex-col items-center">
-                    {experiences.map((exp, index) => {
-                        const isLeft = exp.align === "left";
-                        const isRight = exp.align === "right";
-                        const isCenter = exp.align === "center";
+                {/* Clean Full-Width Mosaic Bento Grid (No overlaps) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6">
+                    {experiences.map((exp, index) => (
+                        <motion.div
+                            key={exp.id}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
+                            className={`relative group cursor-pointer rounded-3xl overflow-hidden border border-blue-500/25 bg-[#060810]/70 backdrop-blur-md shadow-[0_15px_35px_rgba(0,0,0,0.6)] hover:border-blue-400/60 hover:shadow-[0_0_40px_rgba(59,130,246,0.35)] transition-all duration-500 hover:-translate-y-1.5 ${exp.gridSpan}`}
+                            onClick={() => setSelectedPhoto(exp)}
+                        >
+                            {/* Photo Container */}
+                            <div className="relative w-full h-full overflow-hidden">
+                                <Image
+                                    src={exp.src}
+                                    alt={exp.title}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 66vw"
+                                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                />
 
-                        return (
-                            <motion.div
-                                key={exp.id}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-80px" }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
-                                className={`w-full relative group cursor-pointer ${
-                                    index > 0 ? "-mt-14 sm:-mt-20 md:-mt-28 lg:-mt-36" : ""
-                                } ${
-                                    isLeft
-                                        ? "max-w-4xl mr-auto lg:pr-12 z-[10]"
-                                        : isRight
-                                        ? "max-w-4xl ml-auto lg:pl-12 z-[11]"
-                                        : "max-w-5xl mx-auto z-[12]"
-                                }`}
-                                onClick={() => setSelectedPhoto(exp)}
-                            >
-                                {/* Ambient Glow under the card */}
-                                <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-blue-600/20 via-sky-500/15 to-indigo-600/20 rounded-[2.5rem] blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
+                                {/* Subtle Ambient Gradient Overlays for Depth and Legibility */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-[#060810]/40 to-transparent opacity-85 group-hover:opacity-75 transition-opacity duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-sky-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                {/* Staircase Card Container */}
-                                <div className="relative rounded-3xl sm:rounded-[2.5rem] overflow-hidden border border-blue-500/25 bg-[#060810]/70 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.8)] group-hover:border-blue-400/60 transition-all duration-500 group-hover:-translate-y-1.5">
-                                    {/* Main Photo */}
-                                    <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden">
-                                        <Image
-                                            src={exp.src}
-                                            alt={exp.title}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 60vw"
-                                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                                        />
-
-                                        {/* Diffuse Edge Blending (Smooth junction fade so photos melt together) */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-transparent to-[#060810]/50 opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-                                        <div className="absolute inset-0 bg-gradient-to-r from-[#060810]/40 via-transparent to-[#060810]/40" />
-
-                                        {/* Subtle Diagonal Techno Scanline Glow */}
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 via-transparent to-sky-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                                        {/* Zoom Indicator */}
-                                        <div className="absolute top-5 right-5 sm:top-7 sm:right-7 p-3 rounded-2xl glass border border-white/20 text-white/80 group-hover:text-white group-hover:border-blue-400/60 group-hover:scale-110 shadow-lg transition-all duration-300">
-                                            <Maximize2 size={18} />
-                                        </div>
-
-                                        {/* Content Overlay */}
-                                        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 flex flex-col justify-end">
-                                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass border border-blue-500/30 text-sky-400 text-[11px] sm:text-xs font-bold tracking-widest uppercase mb-3 w-fit shadow-md">
-                                                <MapPin size={13} className="text-blue-400" />
-                                                <span>{exp.tag}</span>
-                                            </div>
-
-                                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight uppercase drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] group-hover:text-sky-300 transition-colors">
-                                                {exp.title}
-                                            </h3>
-
-                                            <p className="text-slate-300 text-sm sm:text-base font-light max-w-2xl mt-2 line-clamp-2 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
-                                                {exp.description}
-                                            </p>
-
-                                            {/* Micro-line accent */}
-                                            <div className="w-0 group-hover:w-32 h-1 bg-gradient-to-r from-blue-500 to-sky-400 mt-4 rounded-full transition-all duration-500 shadow-[0_0_12px_#38bdf8]" />
-                                        </div>
-                                    </div>
+                                {/* Expand Icon Indicator */}
+                                <div className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2.5 sm:p-3 rounded-2xl glass border border-white/20 text-white/80 group-hover:text-white group-hover:border-blue-400/60 group-hover:scale-110 shadow-lg transition-all duration-300">
+                                    <Maximize2 size={16} />
                                 </div>
-                            </motion.div>
-                        );
-                    })}
+
+                                {/* Clean Content Overlay at Bottom (No location tag) */}
+                                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end">
+                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight uppercase drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] group-hover:text-sky-300 transition-colors">
+                                        {exp.title}
+                                    </h3>
+
+                                    <p className="text-slate-300 text-xs sm:text-sm font-light max-w-xl mt-1.5 line-clamp-2 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
+                                        {exp.description}
+                                    </p>
+
+                                    {/* Accent line */}
+                                    <div className="w-0 group-hover:w-24 h-0.5 bg-gradient-to-r from-blue-500 to-sky-400 mt-3 rounded-full transition-all duration-500 shadow-[0_0_10px_#38bdf8]" />
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
 
@@ -256,13 +220,9 @@ const Gallery = () => {
                                 />
                             </div>
 
-                            {/* Info bar */}
-                            <div className="p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/10 bg-[#060810]/90">
+                            {/* Info bar (No location tag) */}
+                            <div className="p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/10 bg-[#060810]/95">
                                 <div>
-                                    <div className="inline-flex items-center gap-2 text-sky-400 text-xs font-bold uppercase tracking-widest mb-1">
-                                        <MapPin size={14} />
-                                        <span>{selectedPhoto.tag}</span>
-                                    </div>
                                     <h4 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
                                         {selectedPhoto.title}
                                     </h4>
