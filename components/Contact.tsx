@@ -56,13 +56,13 @@ const Contact = () => {
                         <span className="text-slate-600 hidden sm:inline">•</span>
 
                         <a
-                            href="https://www.instagram.com/hau_music/"
+                            href="https://www.instagram.com/audio_syncc/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 hover:text-blue-400 transition-colors"
                         >
                             <Instagram size={16} className="text-sky-400" />
-                            <span>@hau_music</span>
+                            <span>@audio_syncc</span>
                         </a>
 
                         <span className="text-slate-600 hidden sm:inline">•</span>
@@ -90,11 +90,11 @@ const Contact = () => {
 
                         {/* Instagram 3D Button */}
                         <a
-                            href="https://www.instagram.com/hau_music/"
+                            href="https://www.instagram.com/audio_syncc/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label="Instagram @hau_music"
-                            title="Seguir en Instagram @hau_music"
+                            aria-label="Instagram @audio_syncc"
+                            title="Seguir en Instagram @audio_syncc"
                             className="relative group w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] border-t border-white/50 border-b border-[#630b42] border-x border-[#911562]/70 shadow-[0_6px_0_#630b42,0_14px_22px_rgba(220,39,67,0.45)] hover:-translate-y-1 hover:shadow-[0_8px_0_#630b42,0_18px_28px_rgba(220,39,67,0.6)] active:translate-y-1.5 active:shadow-[0_1px_0_#630b42,0_5px_10px_rgba(220,39,67,0.35)] transition-all duration-150 ease-out cursor-pointer overflow-hidden"
                         >
                             {/* 3D Gloss Highlight */}

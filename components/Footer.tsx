@@ -50,7 +50,7 @@ const Footer = () => {
                             Líderes en renta de equipo para eventos, audio de alta fidelidad, iluminación robótica y producción técnica en Cancún y Playa del Carmen.
                         </p>
                         <div className="flex justify-center md:justify-start space-x-4">
-                            <a href="https://www.instagram.com/hau_music/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @hau_music" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
+                            <a href="https://www.instagram.com/audio_syncc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @audio_syncc" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
                                 <Instagram size={22} strokeWidth={1.75} />
                             </a>
                             <a href="https://www.facebook.com/profile.php?id=61593001150127" target="_blank" rel="noopener noreferrer" aria-label="Facebook Audio Syncc" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
@@ -66,7 +66,7 @@ const Footer = () => {
                     <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}>
                         <h3 className="text-white font-black text-xs tracking-[0.3em] mb-6 uppercase text-sky-400">NAVEGACIÓN</h3>
                         <ul className="space-y-4">
-                            {["Inicio", "Servicios", "Galería", "Nosotros", "Contacto"].map((item) => (
+                            {["Inicio", "Servicios", "Experiencias", "Nosotros", "Contacto"].map((item) => (
                                 <li key={item}>
                                     <Link href={`#${item.toLowerCase()}`} className="text-slate-400 hover:text-blue-400 transition-all font-bold text-xs tracking-widest hover:pl-1">
                                         {item.toUpperCase()}

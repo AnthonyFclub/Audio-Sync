@@ -20,7 +20,7 @@ const Navbar = () => {
     const navLinks = [
         { name: "INICIO", href: "#hero" },
         { name: "SERVICIOS", href: "#servicios" },
-        { name: "GALERÍA", href: "#galeria" },
+        { name: "EXPERIENCIAS", href: "#experiencias" },
         { name: "NOSOTROS", href: "#nosotros" },
         { name: "CONTACTO", href: "#contacto" },
     ];
@@ -131,7 +131,7 @@ const Navbar = () => {
                                 transition={{ delay: 0.5 }}
                                 className="mt-8 flex gap-5"
                             >
-                                <a href="https://www.instagram.com/hau_music/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @hau_music" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
+                                <a href="https://www.instagram.com/audio_syncc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @audio_syncc" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
                                     <Instagram size={24} />
                                 </a>
                                 <a href="https://www.facebook.com/profile.php?id=61593001150127" target="_blank" rel="noopener noreferrer" aria-label="Facebook Audio Syncc" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
