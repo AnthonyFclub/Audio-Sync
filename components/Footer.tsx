@@ -50,7 +50,7 @@ const Footer = () => {
                             Líderes en renta de equipo para eventos, audio de alta fidelidad, iluminación robótica y producción técnica en Cancún y Playa del Carmen.
                         </p>
                         <div className="flex justify-center md:justify-start space-x-4">
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
+                            <a href="https://instagram.com/audio_syncc" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
                                 <Instagram size={22} strokeWidth={1.75} />
                             </a>
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">

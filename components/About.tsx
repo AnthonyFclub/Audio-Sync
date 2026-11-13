@@ -9,7 +9,7 @@ const features = [
     { icon: <Zap size={20} strokeWidth={1.75} />, text: "EQUIPOS TOP AUDIO & ILUMINACIÓN" },
     { icon: <ShieldCheck size={20} strokeWidth={1.75} />, text: "INGENIEROS DE SONIDO ÉLITE" },
     { icon: <MessageSquare size={20} strokeWidth={1.75} />, text: "SERVICIO 100% PERSONALIZADO" },
-    { icon: <Globe size={20} strokeWidth={1.75} />, text: "CANCÚN, PLAYA DEL CARMEN & QUINTANA ROO" }
+    { icon: <Globe size={20} strokeWidth={1.75} />, text: "CANCÚN, PLAYA DEL CARMEN" }
 ];
 
 const About = () => {
