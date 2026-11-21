@@ -99,17 +99,14 @@ const Services = () => {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {services.map((service, index) => (
-                        <motion.a
+                        <motion.div
                             key={index}
-                            href={`https://wa.me/529993683122?text=Hola%20Audio%20Sync!%20Me%20interesa%20cotizar:%20${encodeURIComponent(service.title)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             variants={{
                                 hidden: { opacity: 0, y: 40, scale: 0.95 },
                                 show: { opacity: 1, y: 0, scale: 1 }
                             }}
                             transition={{ duration: 0.7, ease: "easeOut" }}
-                            className={`group relative p-8 sm:p-10 rounded-3xl overflow-hidden glass-card hover:border-blue-400/50 transition-all duration-500 hover:-translate-y-2.5 ${service.shadow} h-full flex flex-col justify-between cursor-pointer`}
+                            className={`group relative p-8 sm:p-10 rounded-3xl overflow-hidden glass-card hover:border-blue-400/50 transition-all duration-500 hover:-translate-y-2.5 ${service.shadow} h-full flex flex-col justify-between`}
                         >
                             {/* Background Image with Dark Blue Tone */}
                             <div className="absolute inset-0 z-0">
@@ -142,7 +139,7 @@ const Services = () => {
                                 <span className="tracking-widest uppercase">SOLICITAR COTIZACIÓN</span>
                                 <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                             </div>
-                        </motion.a>
+                        </motion.div>
                     ))}
                 </motion.div>
             </div>

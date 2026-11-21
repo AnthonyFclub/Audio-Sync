@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, Mail, MapPin, Phone, Zap } from "lucide-react";
+import { Facebook, Instagram, MapPin, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -56,9 +56,6 @@ const Footer = () => {
                             <a href="https://www.facebook.com/profile.php?id=61593001150127" target="_blank" rel="noopener noreferrer" aria-label="Facebook Audio Syncc" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
                                 <Facebook size={22} strokeWidth={1.75} />
                             </a>
-                            <a href="https://wa.me/529993683122" target="_blank" rel="noopener noreferrer" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
-                                <Phone size={22} strokeWidth={1.75} />
-                            </a>
                         </div>
                     </motion.div>
 
@@ -84,12 +81,7 @@ const Footer = () => {
                                 <MapPin className="text-blue-400 shrink-0 mt-0.5" size={18} strokeWidth={2} />
                                 <span className="text-xs font-bold tracking-wider uppercase">CANCÚN & PLAYA DEL CARMEN</span>
                             </li>
-                            <li className="flex items-center justify-center md:justify-start gap-3 text-slate-300">
-                                <Phone className="text-blue-400 shrink-0" size={18} strokeWidth={2} />
-                                <a href="https://wa.me/529993683122" target="_blank" rel="noopener noreferrer" className="text-xs font-bold tracking-wider hover:text-blue-400 transition-colors">
-                                    +52 999 368 3122
-                                </a>
-                            </li>
+
                         </ul>
                     </motion.div>
                 </div>

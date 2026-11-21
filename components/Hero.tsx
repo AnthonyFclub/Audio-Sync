@@ -76,10 +76,10 @@ const Hero = () => {
                         className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5"
                     >
                         <Link
-                            href="#contacto"
+                            href="#servicios"
                             className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white font-black text-xs sm:text-sm tracking-widest uppercase shadow-[0_0_35px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_rgba(59,130,246,0.9)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 border border-sky-300/40"
                         >
-                            COTIZAR EVENTO
+                            VER SERVICIOS
                             <ArrowRight size={18} strokeWidth={2.5} />
                         </Link>
                         <Link

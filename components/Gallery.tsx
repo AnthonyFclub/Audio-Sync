@@ -16,7 +16,7 @@ interface Experience {
 const experiences: Experience[] = [
     {
         id: 1,
-        src: "/images/experiencias/IMG_7675.jpeg",
+        src: "/images/experiencias/IMG_7506.jpeg",
         title: "YACHT & CATAMARAN SESSION",
         description: "Cabina Pioneer XDJ de última generación en altamar sobre las aguas turquesas del Caribe.",
         gridSpan: "col-span-1 md:col-span-2 lg:col-span-8 h-[380px] sm:h-[450px] lg:h-[480px]",
@@ -232,9 +232,7 @@ const Gallery = () => {
                                 </div>
 
                                 <a
-                                    href={`https://wa.me/529993683122?text=Hola%20Audio%20Sync!%20Me%20interesa%20un%20montaje%20como%20el%20de%20la%20foto:%20${encodeURIComponent(selectedPhoto.title)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    href="#contacto"
                                     className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white font-black text-xs uppercase tracking-widest shadow-[0_0_25px_rgba(59,130,246,0.5)] hover:shadow-[0_0_40px_rgba(59,130,246,0.8)] transition-all shrink-0 cursor-pointer"
                                 >
                                     <MessageCircle size={18} />

@@ -137,9 +137,6 @@ const Navbar = () => {
                                 <a href="https://www.facebook.com/profile.php?id=61593001150127" target="_blank" rel="noopener noreferrer" aria-label="Facebook Audio Syncc" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
                                     <Facebook size={24} />
                                 </a>
-                                <a href="https://wa.me/529993683122" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-3.5 glass rounded-full text-white hover:text-blue-400 hover:border-blue-400/50 transition-all">
-                                    <Phone size={24} />
-                                </a>
                             </motion.div>
                         </div>
 
