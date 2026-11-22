@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, MapPin, Zap } from "lucide-react";
+import { MapPin, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -49,14 +49,7 @@ const Footer = () => {
                         <p className="text-slate-400 mb-8 text-base font-light leading-relaxed max-w-md mx-auto md:mx-0">
                             Líderes en renta de equipo para eventos, audio de alta fidelidad, iluminación robótica y producción técnica en Cancún y Playa del Carmen.
                         </p>
-                        <div className="flex justify-center md:justify-start space-x-4">
-                            <a href="https://www.instagram.com/audio_syncc/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @audio_syncc" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
-                                <Instagram size={22} strokeWidth={1.75} />
-                            </a>
-                            <a href="https://www.facebook.com/profile.php?id=61593001150127" target="_blank" rel="noopener noreferrer" aria-label="Facebook Audio Syncc" className="p-3.5 glass rounded-full text-slate-300 hover:text-white hover:border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all">
-                                <Facebook size={22} strokeWidth={1.75} />
-                            </a>
-                        </div>
+
                     </motion.div>
 
                     {/* Quick Links */}
