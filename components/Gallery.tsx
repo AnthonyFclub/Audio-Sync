@@ -16,7 +16,7 @@ interface Experience {
 const experiences: Experience[] = [
     {
         id: 1,
-        src: "/images/experiencias/IMG_7506.jpeg",
+        src: "/images/experiencias/yacht-session-new.jpg",
         title: "YACHT & CATAMARAN SESSION",
         description: "Cabina Pioneer XDJ de última generación en altamar sobre las aguas turquesas del Caribe.",
         gridSpan: "col-span-1 md:col-span-2 lg:col-span-8 h-[380px] sm:h-[450px] lg:h-[480px]",
